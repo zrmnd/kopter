@@ -1,7 +1,6 @@
 # coding=UTF-8
 import socket
 import multiprocessing 
-#import threading
 import time
 import errno
 from multiprocessing import Process, Manager, Value
@@ -44,7 +43,7 @@ class ModuleIP(object):
 pass
 
 
-# класс длЯ передачи в потоки интерпретации текста команд и получениЯ ответов
+# class for exchange commands and answers for server and executor 
 class comandAgent(object):
     def __init__(self):
         self._mutex = multiprocessing.Lock()
@@ -187,7 +186,7 @@ def srv_interpreter_thread(cmdAgent, flagStopThread, flagDropConnection): #recei
 	client = ""
 
 	while flagStopThread.value == 0:
-		# пробуем получить клиента:
+		# try connect client
 		try:
 			newclient, addr = srv_interpreter.accept()
 			print "Accepted new connection"
@@ -198,13 +197,13 @@ def srv_interpreter_thread(cmdAgent, flagStopThread, flagDropConnection): #recei
 			except:
 				pass
 			client = newclient
-			client.setblocking(0) # снимаем блокировку и тут тоже
+			client.setblocking(0) 
 		except:
 			pass
 			
 		
 				
-		# попытка получить данные
+		# try receive data
 		data = ""
 		try:
 			if not client == "":
@@ -212,14 +211,14 @@ def srv_interpreter_thread(cmdAgent, flagStopThread, flagDropConnection): #recei
 				while tmp and (flagStopThread.value == 0):
 					data = data + tmp
 					tmp = client.recv(1024)					
-		except socket.error, e: # данных нет
+		except socket.error, e: # no data
 			if e.args[0] == errno.EAGAIN or e.args[0] == errno.EWOULDBLOCK:
 				#print "No data\n" 
 				pass
 			else: 
 				flagDropConnection.value = 1						
 			time.sleep(0.1)				
-		if not data == "": # данные принЯты
+		if not data == "": # data was received
 			if cmdAgent.isReady() == 1:
 				cmdAgent.runCmd(data)
 				print "cmdAgent runCmd by interpreter: " + data
@@ -265,12 +264,12 @@ def srv_supervisor_thread(cmdAgent, flagStopThread, flagDropConnection): #receiv
 	srv_supervisor.listen(10)
 	srv_supervisor.setblocking(0)
 	while flagStopThread.value == 0:      
-		# получает клиентов:
+		# try accept client
 		try:
 			client, addr = srv_supervisor.accept()
 			# клиенты есть
 			print "Accepted by supervisor...\n"
-			#client.setblocking(0) # снимаем блокировку и тут тоже
+			#client.setblocking(0)
 			client.settimeout(1)
 			#parse(client, addr)
 			try:
@@ -281,22 +280,22 @@ def srv_supervisor_thread(cmdAgent, flagStopThread, flagDropConnection): #receiv
 					data = data + tmp
 					tmp = client.recv(1024)
 					
-			except socket.error, e: # данных нет или соединение дропнулось
+			except socket.error, e: # no data or connection dropped
 				if e.args[0] == errno.EAGAIN or e.args[0] == errno.EWOULDBLOCK:
 						#print "No data\n" 
 						pass		
 				time.sleep(0.1) 
-			if not data == "": # если data не пуст, запускаем обработку команды супервайзера
+			if not data == "": # if data no empty, run executing
 				print "Data received by supervisor..."
 				if IsStopAllCmd(data):
 					flagDropConnection.value = 1
 										
-				# проверяем и выполняем команды
+				
 				print("Supervisor received cmd: " + data)
 				client.send("Your data: " + data)
 			client.close()
 				
-		except socket.error: # клиентов нет
+		except socket.error: # no clients
 			pass 
 			
 		time.sleep(0.1)
@@ -379,7 +378,7 @@ try:
 		
 
 		
-		# делаем ProxyObjects
+		# create ProxyObjects
 		BaseManager.register('comandAgent', comandAgent)
 		BaseManager.register('ModuleIP', ModuleIP)
 		manager = BaseManager()
@@ -390,7 +389,7 @@ try:
 		missionEditorIp = manager.ModuleIP()
 		missionIp = manager.ModuleIP()
 		
-		# делаем SharedMemory
+		# create SharedMemory
 		flagStopInterpreter = Value('i', 0)
 		flagStopSupervisor = Value('i', 0)
 		flagDropInterpreterConnection = Value('i', 0)
@@ -410,8 +409,8 @@ try:
 
 
 		while True:
-			# проверка на то, что объекту послали команду на выполнение 
-			if interpreterComandAgent.isReady() == False:
+			
+			if interpreterComandAgent.isReady() == False: #if server received data and run Execution:
 				interpreterComandAgent.addAnswer("$CPA02,57,OK\n")
 				#time.sleep(2)
 				#interpreterComandAgent.addAnswer("Answer2")
