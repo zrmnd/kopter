@@ -17,9 +17,31 @@ from serial.tools import list_ports
 
 INTERPRETER_PORT = 4355
 SUPERVISOR_PORT = 4358
+IPAUTOCONF_PORT = 4351
 
 
 
+
+class ModuleIP(object):
+    def __init__(self):
+        self._mutex = multiprocessing.Lock()
+        self._ip = ""
+        self._ipTime = 0
+        
+    def incTime(self):
+		self._mutex.acquire()
+		self._ipTime = self._ipTime + 1
+		self._mutex.release()
+    def setIp(self, ip):
+		self._mutex.acquire()
+		self._ipTime = 0
+		self._ip = ip
+		self._mutex.release()
+    def get(self):
+		self._mutex.acquire()
+		return (self._ip, self._ipTime)
+		self._mutex.release()
+pass
 
 
 # класс для передачи в потоки интерпретации текста команд и получения ответов
@@ -106,6 +128,51 @@ def IsStopCmd(cmd):
  
 
 
+
+def ip_autoconf_sender(flagStopThread, missionEditorIp, pultIp, missionIp):
+    sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    sock.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
+    while flagStopThread.value == 0:
+        sock.sendto('$CPA00,COPTER V1.0,\n',('192.168.8.255', IPAUTOCONF_PORT))
+        missionEditorIp.incTime()
+        pultIp.incTime()
+        missionIp.incTime()
+        time.sleep(1)
+    pass
+    sock.close()
+
+	
+def ip_autoconf_receiver(flagStopThread, missionEditorIp, missionIp, pultIp):
+    sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+    sock.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
+    sock.bind(('0.0.0.0', IPAUTOCONF_PORT))
+    while flagStopThread.value == 0:
+        message, sender_addr = sock.recvfrom(128)
+        if message[0:6] == "$MEA00":
+            ip, port = sender_addr
+            missionEditorIp.setIp(ip)
+            print "Mission Editor IP is", ip, "was updated"
+        elif message[0:6] == "$MSA00":
+            ip, port = sender_addr
+            missionIp.setIp(ip)
+            print "Mission IP is", ip, "was updated"
+        elif message[0:6] == "$PUA00":
+            ip, port = sender_addr
+            pultIp.setIp(ip)
+            print "Pult IP is", ip, "was updated"
+        elif message[0:6] == "$CPA00":
+            pass
+        #if not message[0:6] == '$CPA00':
+            #print message, sender_addr
+    pass
+    sock.close() 
+ 
+ 
+ 
+ 
+ 
+ 
 
 def srv_interpreter_thread(cmdAgent, flagStopThread, flagDropConnection): #receive comands over TCP-IP, handle them and send answers
 	print "srv_interpreter_thread start\n"
@@ -310,24 +377,33 @@ try:
 		
 		#main_board_handler()
 		
+
+		
 		# делаем ProxyObjects
 		BaseManager.register('comandAgent', comandAgent)
+		BaseManager.register('ModuleIP', ModuleIP)
 		manager = BaseManager()
 		manager.start()
 		interpreterComandAgent = manager.comandAgent()
 		supervisorComandAgent = manager.comandAgent()
+		pultIp = manager.ModuleIP()
+		missionEditorIp = manager.ModuleIP()
+		missionIp = manager.ModuleIP()
 		
 		# делаем SharedMemory
 		flagStopInterpreter = Value('i', 0)
 		flagStopSupervisor = Value('i', 0)
 		flagDropInterpreterConnection = Value('i', 0)
+		flagStopIpTranslator = Value('i',0)
 		
-		
+
 		
 		
 		print "Starting threads..."
 		p4 = Process(target=srv_interpreter_thread, args=(interpreterComandAgent, flagStopInterpreter, flagDropInterpreterConnection))
 		p5 = Process(target=srv_supervisor_thread, args=(supervisorComandAgent, flagStopSupervisor, flagDropInterpreterConnection))
+		p1 = Process(target=ip_autoconf_sender, args=(flagStopIpTranslator, missionEditorIp, pultIp, missionIp))
+		p1.start()
 		p4.start()
 		p5.start()
 		
@@ -349,9 +425,9 @@ try:
 except KeyboardInterrupt:
 	if __name__ == '__main__':
 		print "Terminating..."
-		flagStopInterpreter = True
-		flagStopSupervisor = True
-		
+		flagStopInterpreter.value = 1
+		flagStopSupervisor.value = 1
+		flagStopIpTranslator.value = 1 
 		p4.join()
 		p5.join()
 	raise
