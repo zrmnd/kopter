@@ -1,4 +1,4 @@
-# coding=UTF-8
+#coding=CP1251
 import socket
 import multiprocessing 
 import time
@@ -11,14 +11,14 @@ import serial
 import sys
 import glob
 from serial.tools import list_ports
-
+import base64
 
 
 INTERPRETER_PORT = 4355
 SUPERVISOR_PORT = 4358
 IPAUTOCONF_PORT = 4351
 
-
+WHELL_K = 10
 
 
 class ModuleIP(object):
@@ -309,51 +309,77 @@ def srv_supervisor_thread(cmdAgent, flagStopThread, flagDropConnection): #receiv
 	
 	
 	
+	
+cmdPlatformInit = "UART\r"
+cmdPlatformFwd = "M1L!\r"
+cmdPlatformRev = "M1R!\r"
+cmdPlatformStop = "M1SS\rM1BB\r"
+
+
+cmdUartS = "$INE01,77,3,9600,\n"
+cmdUartSendBegin = "$INE02,77,3,"
+cmdUartSendEnd = ",\n"
+#cmdUartSendRxEnd = "$INE09,77,3,\n"
+
+
+
+def findMainBoard():
+	ports_avaiable = list(list_ports.comports())
+	t_port = ""
+	for port in ports_avaiable:
+		s = port[2]
+		if not s.find('602') == -1:
+			t_port = port[0]
+	try:	
+		ser = serial.Serial(t_port)
+		ser.baudrate = 115200
+		print "ser opened"
+	except: 
+		ser = ""
+	return ser
 
 	
 	
+def sendToMain(ser, cmd):	
+	if not ser == "": 
+		try:		
+			ser.write(cmd.encode())
+			print cmd
+			time.sleep(0.5)
+			return 1
+		except:
+			return 0
+			
+			
+def SendToPlatform(ser, cmd):	
+	if not ser == "": 
+		try:
+			cmdE = base64.b64encode(cmd)
+			str = cmdUartSendBegin+cmdE+cmdUartSendEnd
+			sendToMain(ser, str)
+			
+			return 1
+		except:
+			return 0
 
-	
-def main_board_handler():
-	ports = []
+			
+
+			
+
+def platformInit(ser):
 	try:
-		tmp = serial.Serial(port = 'COM2', baudrate=2400, parity=serial.PARITY_NONE, stopbits=serial.STOPBITS_ONE, bytesize=serial.EIGHTBITS, timeout=0)
-		print("connected to: " + ser.portstr)
+		print "try write"
+		sendToMain(ser, cmdUartS)
+		SendToPlatform(ser, base64.b64encode(cmdPlatformInit))
+		SendToPlatform(ser, base64.b64encode(cmdPlatformInit))
+		print "write ok"
+		data = ""
 		while ser.inWaiting():
-			 data = ser.read()
-	except serial.serialutil.SerialException:
-		pass
-	
-	
-def serial_ports():
-    """ Lists serial port names
-
-        :raises EnvironmentError:
-            On unsupported or unknown platforms
-        :returns:
-            A list of the serial ports available on the system
-    """
-    if sys.platform.startswith('win'):
-        ports = ['COM%s' % (i + 1) for i in range(256)]
-    elif sys.platform.startswith('linux') or sys.platform.startswith('cygwin'):
-        # this excludes your current terminal "/dev/tty"
-        ports = glob.glob ('/dev/tty[A-Za-z]*') # http://qaru.site/questions/114632/listing-available-com-ports-with-python
-    elif sys.platform.startswith('darwin'):
-        ports = glob.glob('/dev/tty.*')
-    else:
-        raise EnvironmentError('Unsupported platform')
-
-    result = []
-    for port in ports:
-        try:
-			s = serial.Serial(port)
-			result.append(port)
-			print port 
-			s.close()
-            
-        except (OSError, serial.SerialException):
-            pass
-    return result	
+			data = data + ser.read()
+		print data
+		return 1
+	except: 
+		return 0
 	
 	
 
@@ -369,6 +395,7 @@ try:
 		
 		for port in ports_avaiable:
 			print port[0] + " - " + port[1] + " - " + port[2]
+			#if port[1].f
 		
 		#serial_ports()
 		#list = serial_ports()
@@ -406,11 +433,66 @@ try:
 		p4.start()
 		p5.start()
 		
-
+		ser = findMainBoard()
+		if platformInit(ser) == 1:
+			print "Init ok"
+		else:
+			print "Init error"
+			
+		sendToMain(ser, "$INE08,77,3,\n".encode())
+		sendToMain(ser, "$INE09,77,3,\n".encode())
+		
 
 		while True:
-			
+			data = ""
+			if not ser == "":
+				while ser.inWaiting():
+					data = data + ser.read()
+				if not data == "":
+					print data
 			if interpreterComandAgent.isReady() == False: #if server received data and run Execution:
+				#$PUI12,64,435.432,<LF>
+				cmd = interpreterComandAgent.getCmd() 
+				interpreterComandAgent.addAnswer("$CPA01,77,OK\n")
+				if cmd[0:6] == "$PUI12":
+					if SendToPlatform(ser, cmdPlatformStop) == 0:
+						ser = findMainBoard()
+						if platformInit(ser) == 1:
+							print "Init ok"
+							SendToPlatform(ser, cmdPlatformStop)
+						else:
+							print "Init error"
+					sub = cmd[10:]
+					i = sub.find(',')
+					sub = sub[:i]
+					f = float(sub)
+					print "received: " + cmd
+					print "Wheel to: " + str(f) 
+					data = ""
+					while ser.inWaiting():
+						data = data + ser.read()
+					print data
+					if f > 0:
+						SendToPlatform(ser, cmdPlatformFwd)
+					else: 
+						SendToPlatform(ser, cmdPlatformRev)
+						f = -f
+					time.sleep(f)
+					SendToPlatform(ser, cmdPlatformStop)
+					interpreterComandAgent.addAnswer("$CPA02,77,OK\n")
+					data = ""
+					while ser.inWaiting():
+						data = data + ser.read()
+					print data
+				elif cmd[0:6] == "$MSA00":
+					pass
+					
+				elif cmd[0:6] == "$PUA00":
+					pass
+					
+				elif cmd[0:6] == "$CPA00":
+					pass
+			
 				interpreterComandAgent.addAnswer("$CPA02,57,OK\n")
 				#time.sleep(2)
 				#interpreterComandAgent.addAnswer("Answer2")

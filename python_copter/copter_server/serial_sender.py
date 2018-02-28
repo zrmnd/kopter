@@ -22,7 +22,10 @@ cmds.append(b"$INE09,56,\n")
 cmd1 = b"$INE08,77,1,\n"
 cmd2 = b"$INE09,77,1,\n"
 
-
+cmdPlatformInit = b"UART\r"
+cmdPlatformFwd = b"M1L!\r"
+cmdPlatformRev = b"M1R!\r"
+cmdPlatformStop = b"M1SS\rM1BB\r"
 
 s = "dG92YXJpc2NoIQ=="
 encoded = base64.b64encode(b'data to be encoded')
@@ -45,8 +48,8 @@ try:
 		time.sleep(1)
 		ser.write(cmd2);
 		while ser.inWaiting():
-             data = ser.read()
-			 print data
+			data = ser.read()
+			print data
 		
 		#ser.write(cmds[12].encode())
 	#ser.write("test\n\r\0".encode())
