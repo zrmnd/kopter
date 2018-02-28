@@ -1,5 +1,6 @@
 import serial
 import base64
+import time
 from serial.tools import list_ports
 
 cmds = []
@@ -18,6 +19,10 @@ cmds.append(b"$INE07,61,4,0,AA\n")
 cmds.append(b"$INE08,56,\n")
 cmds.append(b"$INE09,56,\n")
 
+cmd1 = b"$INE08,77,1,\n"
+cmd2 = b"$INE09,77,1,\n"
+
+
 
 s = "dG92YXJpc2NoIQ=="
 encoded = base64.b64encode(b'data to be encoded')
@@ -35,8 +40,15 @@ for port in ports_avaiable:
 
 	
 try: 	
-	with serial.Serial('COM5', 19200, timeout=1) as ser:
-		ser.write(cmds[12].encode())
+	with serial.Serial('COM5', 115200, timeout=1) as ser:
+		ser.write(cmd1);
+		time.sleep(1)
+		ser.write(cmd2);
+		while ser.inWaiting():
+             data = ser.read()
+			 print data
+		
+		#ser.write(cmds[12].encode())
 	#ser.write("test\n\r\0".encode())
 except: 
 	print "not connected to COM5"
