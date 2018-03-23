@@ -1,7 +1,91 @@
+#coding=UTF8
 import serial
 import base64
 import time
 from serial.tools import list_ports
+
+
+
+
+	
+	
+cmdPlatformInit = "UART\r"
+cmdPlatformFwd = "M1L!\r"
+cmdPlatformRev = "M1R!\r"
+cmdPlatformStop = "M1SS\rM1BB\r"
+
+
+cmdUartS = "$INE01,77,2,115200,\n"
+cmdUartSendBegin = "$INE02,77,2,"
+cmdUartSendEnd = ",\n"
+#cmdUartSendRxEnd = "$INE09,77,3,\n"
+
+
+
+def findIntros():
+	ports_avaiable = list(list_ports.comports())
+	t_port = ""
+	for port in ports_avaiable:
+		s = port[2]
+		if not s.find('502') == -1:
+			t_port = port[0]
+	try:	
+		ser = serial.Serial(t_port)
+		ser.baudrate = 9600
+		print "ser opened"
+	except: 
+		ser = ""
+	return ser
+
+	
+	
+def sendToIntrosBoard(ser, cmd):	
+	if not ser == "": 
+		try:	
+			for char in cmd:
+				#ser.write(cmd.encode())
+				ser.write(char)
+				time.sleep(0.1)
+			print "sended: " + cmd
+			return 1
+		except:
+			return 0
+			
+			
+def SendToIntros(ser, cmd):	
+	if not ser == "": 
+		try:
+			cmdE = base64.b64encode(cmd)
+			str = cmdUartSendBegin+cmdE+cmdUartSendEnd
+			sendToIntrosBoard(ser, str)
+			
+			return 1
+		except:
+			return 0
+
+			
+def introsPwrOnOff(ser):
+	sendToIntrosBoard(ser, "$INE07,77,2,1,\n")
+	time.sleep(1)
+	sendToIntrosBoard(ser, "$INE07,77,2,0,\n")
+	time.sleep(1)
+
+
+
+			
+def introsStartScan(ser):			
+	pass		
+
+
+def introsStopScan(ser):
+	pass
+			
+
+	
+
+
+
+
 
 cmds = []
 cmds.append(b"$PEE01,53,1,9600,FF\n")
@@ -27,9 +111,9 @@ cmdPlatformFwd = b"M1L!\r"
 cmdPlatformRev = b"M1R!\r"
 cmdPlatformStop = b"M1SS\rM1BB\r"
 
-s = "dG92YXJpc2NoIQ=="
+s = "TTFTUw1NMUJCDQ=="
 encoded = base64.b64encode(b'data to be encoded')
-data = base64.b64decode(encoded)
+data = base64.b64decode("TTFTUw1NMUJCDQ==")
 print encoded
 print data
 print base64.b64decode(s)
@@ -42,16 +126,33 @@ for port in ports_avaiable:
 	print port[0] + " - " + port[1] + " - " + port[2]
 
 	
-try: 	
-	with serial.Serial('COM5', 115200, timeout=1) as ser:
-		ser.write(cmd1);
-		time.sleep(1)
-		ser.write(cmd2);
+	
+	
+ser = findIntros()
+sendToIntrosBoard(ser, b'\r\r\nKEYBOARD\r7\r\r\n')
+sendToIntrosBoard(ser, b'\r\nWORDS\r\r\n')
+	
+
+
+
+#sendToIntrosBoard(ser, u'\x4B\x45\x59\x42\x4F\x41\x52\x44\r\n\n'.encode('cp1251'))
+#sendToIntrosBoard(ser, u'\n\n7\n\n\r'.encode('cp1251'))
+	
+#time.sleep(1)
+#introsPwrOnOff(ser)
+
+#SendToIntros(ser, b'\x1B')   #KEYBOARD
+#SendToIntros(ser, b'KEYBOARD\r')
+i = 0
+while True:
+	i = i + 1
+	#if i < 10:
+	#	SendToIntros(ser, b'KEYBOARD\r')
+	data = ""
+	if not ser == "":
 		while ser.inWaiting():
-			data = ser.read()
+			data = data + ser.read()
+		if not data == "":
 			print data
-		
-		#ser.write(cmds[12].encode())
-	#ser.write("test\n\r\0".encode())
-except: 
-	print "not connected to COM5"
+	
+	

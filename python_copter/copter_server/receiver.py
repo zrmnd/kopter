@@ -14,11 +14,12 @@ from serial.tools import list_ports
 import base64
 
 
+#449 line - wait ser IO error 
+
 INTERPRETER_PORT = 4355
 SUPERVISOR_PORT = 4358
 IPAUTOCONF_PORT = 4351
 
-WHELL_K = 10
 
 
 class ModuleIP(object):
@@ -328,7 +329,7 @@ def findMainBoard():
 	t_port = ""
 	for port in ports_avaiable:
 		s = port[2]
-		if not s.find('602') == -1:
+		if not s.find('601') == -1:
 			t_port = port[0]
 	try:	
 		ser = serial.Serial(t_port)
@@ -354,8 +355,9 @@ def sendToMain(ser, cmd):
 def SendToPlatform(ser, cmd):	
 	if not ser == "": 
 		try:
-			cmdE = base64.b64encode(cmd)
-			str = cmdUartSendBegin+cmdE+cmdUartSendEnd
+			#cmdE = base64.b64encode(cmd)
+			#str = cmdUartSendBegin+cmdE+cmdUartSendEnd
+			str = cmd
 			sendToMain(ser, str)
 			
 			return 1
@@ -369,9 +371,11 @@ def SendToPlatform(ser, cmd):
 def platformInit(ser):
 	try:
 		print "try write"
-		sendToMain(ser, cmdUartS)
+		#sendToMain(ser, cmdUartS)
 		SendToPlatform(ser, base64.b64encode(cmdPlatformInit))
 		SendToPlatform(ser, base64.b64encode(cmdPlatformInit))
+		SendToPlatform(ser, cmdPlatformInit)
+		SendToPlatform(ser, cmdPlatformInit)
 		print "write ok"
 		data = ""
 		while ser.inWaiting():
@@ -454,7 +458,7 @@ try:
 				#$PUI12,64,435.432,<LF>
 				cmd = interpreterComandAgent.getCmd() 
 				interpreterComandAgent.addAnswer("$CPA01,77,OK\n")
-				if cmd[0:6] == "$PUI12":
+				if cmd[0:6] == "$PUI12":  # CWheeledPlatform.gotoPos
 					if SendToPlatform(ser, cmdPlatformStop) == 0:
 						ser = findMainBoard()
 						if platformInit(ser) == 1:
@@ -479,24 +483,35 @@ try:
 						f = -f
 					time.sleep(f)
 					SendToPlatform(ser, cmdPlatformStop)
-					interpreterComandAgent.addAnswer("$CPA02,77,OK\n")
-					data = ""
-					while ser.inWaiting():
-						data = data + ser.read()
-					print data
-				elif cmd[0:6] == "$MSA00":
+					
+					
+				elif cmd[0:6] == "$PUI23":   #intros start scan 
+					print "Intros scan start cmd"
 					pass
 					
-				elif cmd[0:6] == "$PUA00":
+				elif cmd[0:6] == "$PUI24": #intros stop scan
+					print "Intros scan stop cmd"
 					pass
 					
-				elif cmd[0:6] == "$CPA00":
-					pass
+				elif cmd[0:6] == "$PUI03": # cam set pos $MEI03,58,1,23456.342,2336.43,3243.3,<LF>
+					print "Camera set pos cmd"
+					args = cmd.split(',')
+					# args[0] = $MEI03; args[1] = 58; args[2] = 1; args[3] = 23456.342; args[4] = 2336.43; args[5] = 3243.3; args[6] = \n
+					try:
+						x = float(args[3])
+						y = float(args[4])
+						z = float(args[5])
+					except:
+						pass
+					# send data to camera controller 
 			
-				interpreterComandAgent.addAnswer("$CPA02,57,OK\n")
+					
+				interpreterComandAgent.addAnswer("$CPA02,77,OK\n")
+			
+				#interpreterComandAgent.addAnswer("$CPA02,57,OK\n")
 				#time.sleep(2)
 				#interpreterComandAgent.addAnswer("Answer2")
-				time.sleep(1)
+				#time.sleep(1)
 				interpreterComandAgent.setReady()
 			else: 
 				pass
