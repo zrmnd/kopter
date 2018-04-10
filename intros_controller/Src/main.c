@@ -11,13 +11,16 @@
 #include "base64.h"
 //#include "stm32f0xx_hal.h"
 
+
+void introsOn(void);
 volatile uint32_t flagrx = 0, flagusbrx = 0;
 volatile uint8_t ch;
 #define UART_BUF_SIZE 100
 /* Private variables ---------------------------------------------------------*/
 volatile uint8_t cmd_buff[100];
 volatile uint8_t cmd_buff2[100];
-volatile uint32_t ind1 = 0, ind2 = 0;
+//volatile uint8_t cmd_tr_buff[30];
+volatile uint32_t ind1 = 0, ind2 = 0; //, ind_tr = 0;
 
 volatile uint16_t cmd_buf_index = 0;
 /* Private function prototypes -----------------------------------------------*/
@@ -132,11 +135,11 @@ void process_routine(void) {
 
       // INTROS pcb has only one optocoupler ouput, work directly with it 
       if (msg.data.arg2) { 
-         POWER_INTROS_ON();
+         introsOn() ;
          //CDC_Transmit_FS("Pwr cmd ON\n", 11);
       }
       else {
-        POWER_INTROS_OFF();
+        introsOn() ;
          //CDC_Transmit_FS("Pwr cmd OFF\n", 12);
       }
      
@@ -154,23 +157,145 @@ void process_routine(void) {
 }
 
 
+// free line detect functions 
+//------------------------------------------------------------------------------
+void initFreeLineDetectTim(void) {
+  RCC->APB1ENR |= RCC_APB1ENR_TIM2EN;     // ??? ?????????, ?????? ???????????? ??????
+  TIM2->PSC = 47;                // ??????????? 48000000/48 -> f = 1MHz
+  TIM2->CR1 |= TIM_CR1_OPM;       // One Pulse Mode
+  TIM2->ARR = 1000; // 1ms
+  TIM2->DIER |= TIM_DIER_UIE;     // ?????????? ?? ??????????     
+  NVIC_DisableIRQ(TIM2_IRQn);
+}
+
+void restartFreeLineDetectTim(uint16_t ms)
+{
+  TIM2->CR1 &= ~TIM_CR1_CEN;
+  TIM2->CNT = 0;
+  TIM2->ARR = ms*1000;
+  TIM2->CR1 |= TIM_CR1_CEN; 
+  TIM2->SR &= ~TIM_SR_UIF;
+////////////////////////////////////////////????????????? ???????? ??? ??? ???? ????????????? 
+}
+
+
+
+
+//timer for 
+
+
+
+
+
+
+
+//------------------------------------------------------------------------------
+uint32_t txAndRxByte(uint8_t chr, uint16_t timeout_ms) {
+  flagrx = 0;
+  sendUart2((uint8_t*)&chr, 1);
+  restartFreeLineDetectTim(timeout_ms);
+  while (!(TIM2->SR & TIM_SR_UIF) && !flagrx);
+  if ((flagrx && (ch == chr))) {
+      return 1;
+  } 
+  return 0;
+}
+
+
+void pushRxInBuff() {
+  if (ind2 < sizeof(cmd_buff2) && ch != 0) {
+    flagrx = 0;
+    cmd_buff2[ind2++] = ch;
+  }
+}
+
+void delay_ms(uint16_t ms) {
+  restartFreeLineDetectTim(ms);
+  while (!(TIM2->SR & TIM_SR_UIF));
+  TIM2->SR &= ~TIM_SR_UIF;
+}
+
+
+
+void sendString(uint8_t *str, uint16_t len, uint16_t timeout_ms) {
+  uint16_t i = 0;
+  uint8_t errors = 0;
+  while (i < len && errors < 5) {
+    if (txAndRxByte(*(str+i), timeout_ms) ) {
+      i++;
+      pushRxInBuff();
+    }
+    else if (*(str+i) != '\r') {
+      i = 0;
+      txAndRxByte('\r', 100);
+      txAndRxByte('\r', 100);
+      ind2 = 0;
+      errors++;
+      continue;      
+    }  	
+  }
+  if (i == len) {
+    delay_ms(2);
+  }
+  else {
+    delay_ms(1);
+  }
+}
+
+
+
+
+
+
+
+void introsOn(void) {
+  delay_ms(100);
+  POWER_INTROS_ON(); 
+  delay_ms(1500);
+  POWER_INTROS_OFF();
+  delay_ms(600);
+  //memcpy((void*)cmd_buff, (const void*)"KEYBOARD\r", 9); // 777\r\r", 14);
+  txAndRxByte('\r', 400);
+  sendString((uint8_t*)"KEYBOARD", 8, 300);  
+  txAndRxByte('\r', 300);
+  txAndRxByte('7', 300);
+  //txAndRxByte('7', 300);
+  txAndRxByte('\r', 300);
+  delay_ms(300);
+  sendString((uint8_t*)"12 0 0 9 4 18", 13, 600);
+  txAndRxByte('\r', 300);
+  delay_ms(300);
+  /*sendString((uint8_t*)"0\r", 2, 500);
+  //txAndRxByte('\r', 300);
+  sendString((uint8_t*)"0\r", 2, 500);
+  //txAndRxByte('\r', 300);
+  sendString((uint8_t*)"1\r", 2, 500);
+  //txAndRxByte('\r', 300);
+ sendString((uint8_t*)"4\r", 2, 500);
+  //txAndRxByte('\r', 300);
+  sendString((uint8_t*)"18\r", 3, 500);
+  //txAndRxByte('\r', 300);*/
+  sendString((uint8_t*)"TIME!\r", 6, 500);
+  //sendString((uint8_t*)"12\r0\r\0\r1\r4\r18\rTIME!\r", 20, 300);  
+  delay_ms(200);
+}
+
+
 
 int main(void) {
   // Reset of all peripherals, Initializes the Flash interface and the Systick.
   HAL_Init();
   SystemClock_Config();
   init_mcu();
+  initFreeLineDetectTim(); restartFreeLineDetectTim(100);
   
   Configure_USART2(115200);
   __enable_irq();
   
+  introsOn();
   
-  POWER_INTROS_ON(); 
-  for (uint32_t i=0; i<3000000; i++) {asm("nop");}
-  POWER_INTROS_OFF();
-  for (uint32_t i=0; i<3000000; i++) {asm("nop");}
-  for (uint32_t i=0; i<3000000; i++) {asm("nop");}
-  
+  //ind1 = 14;
+  //flagusbrx = 1;
   // add power checking and auto power on
   // measure time of low level on UART RX with timeout and turn intros on if it in off state
   // func togglePower(), isOn() 

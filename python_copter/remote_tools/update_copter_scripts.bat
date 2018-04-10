@@ -1,0 +1,1 @@
+python utils\update_copter_scripts.py

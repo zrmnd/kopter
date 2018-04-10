@@ -300,7 +300,9 @@ extern void sendUart2(uint8_t *data, uint16_t len);
 
 extern uint8_t cmd_buff[];
 extern uint8_t cmd_buff2[];
-extern uint32_t ind1, ind2, flagusbrx;
+//extern uint8_t cmd_tr_buff[];
+
+extern uint32_t ind1, ind2, flagusbrx; //, ind_tr;
 
 static int8_t CDC_Receive_FS(uint8_t* Buf, uint32_t *Len)
 {
@@ -315,19 +317,20 @@ static int8_t CDC_Receive_FS(uint8_t* Buf, uint32_t *Len)
   /*for (uint16_t i = 0; i < *Len; i++) {
     
     if (Buf[i] == '$') {
-      cmd_buf_index = 0;
-      cmd_buff[cmd_buf_index++] = Buf[i];
+      ind_tr = 0;
+      cmd_tr_buff[ind_tr++] = Buf[i];
     }
     else if (Buf[i] == '\n') {
-      cmd_buff[cmd_buf_index++] = Buf[i];
-      cmd_buff[cmd_buf_index] = 0;
-      nmea_parse_msg(cmd_buff);      
+      cmd_tr_buff[ind_tr++] = Buf[i];
+      cmd_tr_buff[ind_tr] = 0;
+      nmea_parse_msg(cmd_tr_buff);      
       process_routine();
+      ind_tr = 0;
     }
     else 
-      cmd_buff[cmd_buf_index++] = Buf[i];
-    if (cmd_buf_index >= sizeof(cmd_buff))
-      cmd_buf_index = 0;
+      cmd_tr_buff[ind_tr++] = Buf[i];
+    if (ind_tr >= 30)
+      ind_tr = 0;
     
   }*/
   //nmea_parse_msg(UserRxBufferFS);

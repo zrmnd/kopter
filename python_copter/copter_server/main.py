@@ -7,12 +7,11 @@ from multiprocessing import Process, Manager, Value
 from multiprocessing.managers import BaseManager
 import os
 from ctypes import c_bool
-import serial
 import sys
 import glob
-from serial.tools import list_ports
-import base64
+import os.path
 from cmdAgent import comandAgent
+import boardDevices
 
 #449 line - wait ser IO error 
 
@@ -22,21 +21,21 @@ IPAUTOCONF_PORT = 4351
 
 
 class ModuleIP(object):
-    def __init__(self):
-        self._mutex = multiprocessing.Lock()
-        self._ip = ""
-        self._ipTime = 0
-        
-    def incTime(self):
+	def __init__(self):
+		self._mutex = multiprocessing.Lock()
+		self._ip = ""
+		self._ipTime = 0
+		
+	def incTime(self):
 		self._mutex.acquire()
 		self._ipTime = self._ipTime + 1
 		self._mutex.release()
-    def setIp(self, ip):
+	def setIp(self, ip):
 		self._mutex.acquire()
 		self._ipTime = 0
 		self._ip = ip
 		self._mutex.release()
-    def get(self):
+	def get(self):
 		self._mutex.acquire()
 		return (self._ip, self._ipTime)
 		self._mutex.release()
@@ -68,43 +67,43 @@ def IsStopCmd(cmd):
 
 
 def ip_autoconf_sender(flagStopThread, missionEditorIp, pultIp, missionIp):
-    sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    sock.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
-    while flagStopThread.value == 0:
-        sock.sendto('$CPA00,COPTER V1.0,\n',('192.168.8.255', IPAUTOCONF_PORT))
-        missionEditorIp.incTime()
-        pultIp.incTime()
-        missionIp.incTime()
-        time.sleep(1)
-    pass
-    sock.close()
+	sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+	sock.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
+	while flagStopThread.value == 0:
+		sock.sendto('$CPA00,COPTER V1.0,\n',('192.168.8.255', IPAUTOCONF_PORT))
+		missionEditorIp.incTime()
+		pultIp.incTime()
+		missionIp.incTime()
+		time.sleep(1)
+	pass
+	sock.close()
 
 	
 def ip_autoconf_receiver(flagStopThread, missionEditorIp, missionIp, pultIp):
-    sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-    sock.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
-    sock.bind(('0.0.0.0', IPAUTOCONF_PORT))
-    while flagStopThread.value == 0:
-        message, sender_addr = sock.recvfrom(128)
-        if message[0:6] == "$MEA00":
-            ip, port = sender_addr
-            missionEditorIp.setIp(ip)
-            print "Mission Editor IP is", ip, "was updated"
-        elif message[0:6] == "$MSA00":
-            ip, port = sender_addr
-            missionIp.setIp(ip)
-            print "Mission IP is", ip, "was updated"
-        elif message[0:6] == "$PUA00":
-            ip, port = sender_addr
-            pultIp.setIp(ip)
-            print "Pult IP is", ip, "was updated"
-        elif message[0:6] == "$CPA00":
-            pass
-        #if not message[0:6] == '$CPA00':
-            #print message, sender_addr
-    pass
-    sock.close() 
+	sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+	sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+	sock.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
+	sock.bind(('0.0.0.0', IPAUTOCONF_PORT))
+	while flagStopThread.value == 0:
+		message, sender_addr = sock.recvfrom(128)
+		if message[0:6] == "$MEA00":
+			ip, port = sender_addr
+			missionEditorIp.setIp(ip)
+			print "Mission Editor IP is", ip, "was updated"
+		elif message[0:6] == "$MSA00":
+			ip, port = sender_addr
+			missionIp.setIp(ip)
+			print "Mission IP is", ip, "was updated"
+		elif message[0:6] == "$PUA00":
+			ip, port = sender_addr
+			pultIp.setIp(ip)
+			print "Pult IP is", ip, "was updated"
+		elif message[0:6] == "$CPA00":
+			pass
+		#if not message[0:6] == '$CPA00':
+			#print message, sender_addr
+	pass
+	sock.close() 
  
  
  
@@ -202,7 +201,7 @@ def srv_supervisor_thread(cmdAgent, flagStopThread, flagDropConnection): #receiv
 	srv_supervisor.bind( ("", SUPERVISOR_PORT) )
 	srv_supervisor.listen(10)
 	srv_supervisor.setblocking(0)
-	while flagStopThread.value == 0:      
+	while flagStopThread.value == 0:	  
 		# try accept client
 		try:
 			client, addr = srv_supervisor.accept()
@@ -246,82 +245,7 @@ def srv_supervisor_thread(cmdAgent, flagStopThread, flagDropConnection): #receiv
 
 
 	
-	
-	
-	
-cmdPlatformInit = "UART\r"
-cmdPlatformFwd = "M1L!\r"
-cmdPlatformRev = "M1R!\r"
-cmdPlatformStop = "M1SS\rM1BB\r"
 
-
-cmdUartS = "$INE01,77,3,9600,\n"
-cmdUartSendBegin = "$INE02,77,3,"
-cmdUartSendEnd = ",\n"
-#cmdUartSendRxEnd = "$INE09,77,3,\n"
-
-
-
-def findMainBoard():
-	ports_avaiable = list(list_ports.comports())
-	t_port = ""
-	for port in ports_avaiable:
-		s = port[2]
-		if not s.find('601') == -1:
-			t_port = port[0]
-	try:	
-		ser = serial.Serial(t_port)
-		ser.baudrate = 115200
-		print "ser opened"
-	except: 
-		ser = ""
-	return ser
-
-	
-	
-def sendToMain(ser, cmd):	
-	if not ser == "": 
-		try:		
-			ser.write(cmd.encode())
-			print cmd
-			time.sleep(0.5)
-			return 1
-		except:
-			return 0
-			
-			
-def SendToPlatform(ser, cmd):	
-	if not ser == "": 
-		try:
-			#cmdE = base64.b64encode(cmd)
-			#str = cmdUartSendBegin+cmdE+cmdUartSendEnd
-			str = cmd
-			sendToMain(ser, str)
-			
-			return 1
-		except:
-			return 0
-
-			
-
-			
-
-def platformInit(ser):
-	try:
-		print "try write"
-		#sendToMain(ser, cmdUartS)
-		SendToPlatform(ser, base64.b64encode(cmdPlatformInit))
-		SendToPlatform(ser, base64.b64encode(cmdPlatformInit))
-		SendToPlatform(ser, cmdPlatformInit)
-		SendToPlatform(ser, cmdPlatformInit)
-		print "write ok"
-		data = ""
-		while ser.inWaiting():
-			data = data + ser.read()
-		print data
-		return 1
-	except: 
-		return 0
 	
 	
 
@@ -333,10 +257,10 @@ try:
 	
 		print "Main run...\n"
 		
-		ports_avaiable = list(list_ports.comports())
+		#ports_avaiable = list(list_ports.comports())
 		
-		for port in ports_avaiable:
-			print port[0] + " - " + port[1] + " - " + port[2]
+		#for port in ports_avaiable:
+			#print port[0] + " - " + port[1] + " - " + port[2]
 			#if port[1].f
 		
 		#serial_ports()
@@ -375,63 +299,72 @@ try:
 		p4.start()
 		p5.start()
 		
-		ser = findMainBoard()
-		if platformInit(ser) == 1:
-			print "Init ok"
-		else:
-			print "Init error"
+		
+		
+
+		boardDevices.intros.init()
+		boardDevices.intros.powerOnOff()
+		boardDevices.intros.initialize()
+		if boardDevices.intros.startScan() == 1:
+			print "scan started"
+			time.sleep(10)
+			boardDevices.intros.stopScan()
+			print "scan stopped"
+		
 			
-		sendToMain(ser, "$INE08,77,3,\n".encode())
-		sendToMain(ser, "$INE09,77,3,\n".encode())
+		#sendToMain(ser, "$INE08,77,3,\n".encode())
+		#sendToMain(ser, "$INE09,77,3,\n".encode())
 		
 
 		while True:
-			data = ""
-			if not ser == "":
-				while ser.inWaiting():
-					data = data + ser.read()
-				if not data == "":
-					print data
-			if interpreterComandAgent.isReady() == False: #if server received data and run Execution:
-				#$PUI12,64,435.432,<LF>
+			#check for updates and terminate this script if update was performed for restarting by process_controller.py 
+			if os.path.isfile(os.path.realpath(os.path.dirname(sys.argv[0]))+'\\upload_finished') == True:
+				print "try update"
+				try:
+					os.remove('upload_finished')
+					break
+				except:
+					print "Error updating"
+					
+			s = boardDevices.mainBoard.readData()
+			if not s == "":
+				print s
+				
+			if interpreterComandAgent.isReady() == False: #if server received data and run Execution: #$PUI12,64,435.432,<LF>
 				cmd = interpreterComandAgent.getCmd() 
 				interpreterComandAgent.addAnswer("$CPA01,77,OK\n")
 				if cmd[0:6] == "$PUI12":  # CWheeledPlatform.gotoPos
-					if SendToPlatform(ser, cmdPlatformStop) == 0:
-						ser = findMainBoard()
-						if platformInit(ser) == 1:
-							print "Init ok"
-							SendToPlatform(ser, cmdPlatformStop)
-						else:
-							print "Init error"
+					if wheeledPlatform.stop() == 1:
+						print "Stop ok"
+					else:
+						print "Stop error"
 					sub = cmd[10:]
 					i = sub.find(',')
 					sub = sub[:i]
 					f = float(sub)
 					print "received: " + cmd
 					print "Wheel to: " + str(f) 
-					data = ""
-					#try:
-					while ser.inWaiting():
-						data = data + ser.read()
-					print data
-					#except:
-						#pass
-					if f > 0:
-						SendToPlatform(ser, cmdPlatformFwd)
-					else: 
-						SendToPlatform(ser, cmdPlatformRev)
-						f = -f
-					time.sleep(f)
-					SendToPlatform(ser, cmdPlatformStop)
-					
+					s = boardDevices.mainBoard.readData()
+					if not s == "":
+						print s
+					wheeledPlatform.run(f)										
 					
 				elif cmd[0:6] == "$PUI23":   #intros start scan 
 					print "Intros scan start cmd"
+					if boardDevices.intros.isOn() == 0:
+						boardDevices.intros.init()
+						boardDevices.intros.powerOnOff()
+						boardDevices.intros.initialize()
+					if boardDevices.intros.startScan() == 1:
+						print "Scan started"
 					pass
 					
 				elif cmd[0:6] == "$PUI24": #intros stop scan
 					print "Intros scan stop cmd"
+					if boardDevices.intros.isOn() == 0:
+						print "Error: scan is not performed"
+					if boardDevices.intros.stopScan() == 1:
+						print "Scan stopped"
 					pass
 					
 				elif cmd[0:6] == "$PUI03": # cam set pos $MEI03,58,1,23456.342,2336.43,3243.3,<LF>
@@ -442,10 +375,21 @@ try:
 						x = float(args[3])
 						y = float(args[4])
 						z = float(args[5])
+						if args[2] == 1:   #camera1
+							boardDevices.camera1.setPos(x, y, z)
+						elif args[2] == 2:   #lidar 
+							boardDevices.lidar.setPos(x, 0, 0)
 					except:
 						pass
-					# send data to camera controller 
-			
+				elif cmd[0:6] == "$PUI06": # cam set zoom
+					print "Camera set zoom cmd"
+					args = cmd.split(',')
+					if args[2] == '1':
+						try: 
+							zoom = int(args[3])
+							boardDevices.camera1.setZoom(zoom)
+						except:
+							pass
 					
 				interpreterComandAgent.addAnswer("$CPA02,77,OK\n")
 			
@@ -458,6 +402,12 @@ try:
 				pass
 			time.sleep(0.1)
 			pass
+		print "Updating..."
+		flagStopInterpreter.value = 1
+		flagStopSupervisor.value = 1
+		flagStopIpTranslator.value = 1 
+		p4.join()
+		p5.join()
 
 except KeyboardInterrupt:
 	if __name__ == '__main__':

@@ -2,11 +2,12 @@
 import sys
 import subprocess
 from datetime import datetime, date
+import os
 
 #args = sys.argv[1:]
 date_str = str(date.today())  
 #args = ['C:/Python36-64/python', '-u', 'learn.py', model_name]
-dir = 'C:\\Users\\Egor\\Desktop\\kopter\\repository\\python_copter\\copter_server\\'
+dir = os.path.realpath(os.path.dirname(sys.argv[0]))+'\\'
 #args = ['python', '-u', dir+'out_test.py']
 
 args = ['python', '-u', dir+'main.py']
