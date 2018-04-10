@@ -300,9 +300,9 @@ extern void sendUart2(uint8_t *data, uint16_t len);
 
 extern uint8_t cmd_buff[];
 extern uint8_t cmd_buff2[];
-//extern uint8_t cmd_tr_buff[];
+extern uint8_t cmd_tr_buff[];
 
-extern uint32_t ind1, ind2, flagusbrx; //, ind_tr;
+extern uint32_t ind1, ind2, flagusbrx, ind_tr;
 
 static int8_t CDC_Receive_FS(uint8_t* Buf, uint32_t *Len)
 {
@@ -331,7 +331,6 @@ static int8_t CDC_Receive_FS(uint8_t* Buf, uint32_t *Len)
       cmd_tr_buff[ind_tr++] = Buf[i];
     if (ind_tr >= 30)
       ind_tr = 0;
-    
   }*/
   //nmea_parse_msg(UserRxBufferFS);
   //event_set(EV_USB_MESSAGE_RECEIVED);
