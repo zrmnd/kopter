@@ -14,7 +14,7 @@ if 1:
 		sock = socket.socket()
 		#sock.connect( ("192.168.8.34", 4355) )
 		sock.connect( ("localhost", 4355) )
-		sock.send('$PUI23,77,1,3,2,15.1,\n') #12 
+		sock.send('$PUI2,77,1,3,2,15.1,\n') #12 
 		data = sock.recv(16384)
 		#udata = data.decode("utf-8")
 		print("Data: " +data)		

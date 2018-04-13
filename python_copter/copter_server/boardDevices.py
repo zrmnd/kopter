@@ -30,6 +30,7 @@ class boardMain(object):
 		try:	
 			self.ser = serial.Serial(t_port)
 			self.ser.baudrate = 115200
+			self.ser.timeout = 1
 			print "ser opened"
 			return 1
 		except: 
@@ -58,7 +59,7 @@ class boardMain(object):
 	def readData(self):
 		data = ""
 		if not self.ser == "":
-			while self.ser.inWaiting():
+			while self.ser.inWaiting() > 0:
 				data = data + self.ser.read()
 		return data
 	
@@ -168,33 +169,37 @@ class magneticScaner(object):
 		try:	
 			self.ser = serial.Serial(t_port)
 			self.ser.baudrate = 115200
+			self.ser.timeout = 1
 			print "intros opened"
 			return 1
 		except: 
 			self.ser = ""
 		return 0
 		
-	def powerOnOff(self):
-		if self.init() == 0:
-			return 0
-		self.sendRaw(b'$INE07,77,2,1,\n')
-		time.sleep(1)
-		#self.sendRaw(b'$INE07,77,2,0,\n')
-		time.sleep(1)
-		return 1
 	def initialize(self):
 		if self.init() == 0:
 			return 0
 		print "intros initializing..."
-		self.sendRaw(b'\r\r\nKEYBOARD\r7\r\r')
-		self.sendRaw(b'\r\r\nKEYBOARD\r7\r\r')
+		self.sendRaw(b'\r')
 		time.sleep(0.5)
-		self.sendRaw(b'\r\r12 0 0 1 4 18\r')
+		self.sendRaw(b'KEYBOARD') 
+		time.sleep(0.1)
+		self.sendRaw(b'\r') 
+		time.sleep(0.3)
+		self.sendRaw(b'7') 
+		self.sendRaw(b'7') 
+		time.sleep(0.3)
+		self.sendRaw(b'\r') 
+		time.sleep(0.1)
+		self.sendRaw(b'\r') 
+		time.sleep(0.5)
+
+		time.sleep(0.5)
+		self.sendRaw(b'12 0 0 1 4 18\r')
 		time.sleep(0.5)
 		self.sendRaw('TIME!\r')
 		time.sleep(0.5)
-		self.sendRaw(b'\r\r12 0 0 1 4 18\rTIME!\r\r')
-		time.sleep(0.5)
+
 		return 1
 	def startScan(self):
 		if self.init() == 0:
@@ -241,6 +246,7 @@ class magneticScaner(object):
 		time.sleep(0.5)
 		self.sendRaw(b'Spd!\r')
 		time.sleep(1)
+		print self.readData()
 		
 		return 1
 	def isOn(self): #####                         fix 
@@ -249,7 +255,7 @@ class magneticScaner(object):
 		if not self.ser == "": 
 			try:		
 				self.ser.write(data.encode())
-				print data
+				#print data
 				time.sleep(0.5)
 				return 1
 			except:

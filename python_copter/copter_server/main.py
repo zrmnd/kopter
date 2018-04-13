@@ -303,14 +303,16 @@ try:
 		
 
 		boardDevices.intros.init()
-		boardDevices.intros.powerOnOff()
+		print boardDevices.intros.readData()
 		boardDevices.intros.initialize()
+		print boardDevices.intros.readData()
 		if boardDevices.intros.startScan() == 1:
 			print "scan started"
+			print boardDevices.intros.readData()
 			time.sleep(10)
 			boardDevices.intros.stopScan()
 			print "scan stopped"
-		
+			print boardDevices.intros.readData()
 			
 		#sendToMain(ser, "$INE08,77,3,\n".encode())
 		#sendToMain(ser, "$INE09,77,3,\n".encode())
