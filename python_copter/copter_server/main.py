@@ -336,40 +336,46 @@ try:
 				cmd = interpreterComandAgent.getCmd() 
 				interpreterComandAgent.addAnswer("$CPA01,77,OK\n")
 				if cmd[0:6] == "$PUI12":  # CWheeledPlatform.gotoPos
-					if wheeledPlatform.stop() == 1:
+					if boardDevices.wheeledPlatform.stop() == 1:
 						print "Stop ok"
 					else:
 						print "Stop error"
-					sub = cmd[10:]
+					sub = cmd[7:]
+					i = sub.find(',')
+					sub = sub[i+1:]
 					i = sub.find(',')
 					sub = sub[:i]
-					f = float(sub)
+					try:
+						f = float(sub)
+					except:
+						f = 0
+						print "argument " + sub + "error"
 					print "received: " + cmd
 					print "Wheel to: " + str(f) 
-					s = boardDevices.mainBoard.readData()
+					s = boardDevices.wheeledPlatform.readData()
 					if not s == "":
 						print s
-					wheeledPlatform.run(f)										
+					boardDevices.wheeledPlatform.run(f)										
 					
 				elif cmd[0:6] == "$PUI23":   #intros start scan 
 					print "Intros scan start cmd"
-					if boardDevices.intros.isOn() == 0:
-						boardDevices.intros.init()
-						boardDevices.intros.powerOnOff()
-						boardDevices.intros.initialize()
-					if boardDevices.intros.startScan() == 1:
-						print "Scan started"
+					if boardDevices.intros.isScanningRun() == 1:
+						print "Error: scan is already performed"
+					else:
+						if boardDevices.intros.startScan() == 1:
+							print "Scan started"
 					pass
 					
 				elif cmd[0:6] == "$PUI24": #intros stop scan
 					print "Intros scan stop cmd"
-					if boardDevices.intros.isOn() == 0:
+					if boardDevices.intros.isScanningRun() == 0:
 						print "Error: scan is not performed"
-					if boardDevices.intros.stopScan() == 1:
-						print "Scan stopped"
+					else:
+						if boardDevices.intros.stopScan() == 1:
+							print "Scan stopped"
 					pass
 					
-				elif cmd[0:6] == "$PUI03": # cam set pos $MEI03,58,1,23456.342,2336.43,3243.3,<LF>
+				elif cmd[0:6] == "$PUI03": # cam set pos $PUI03,58,1,23456.342,2336.43,3243.3,<LF>
 					print "Camera set pos cmd"
 					args = cmd.split(',')
 					# args[0] = $MEI03; args[1] = 58; args[2] = 1; args[3] = 23456.342; args[4] = 2336.43; args[5] = 3243.3; args[6] = \n

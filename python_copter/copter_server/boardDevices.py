@@ -86,7 +86,7 @@ class boardPlatform(object):
 	def __init__(self):
 		self._mutex = multiprocessing.Lock()
 
-	def init1(self):
+	def init(self):
 		if mainBoard.init() == 0:
 			return 0
 		try:
@@ -103,12 +103,14 @@ class boardPlatform(object):
 			return 0
 			
 	def isRunning(self):
+		print "platform isRunning call: It is stub. Fix it!" 
 		return 0	
 	def isOk(self):
 		return mainBoard.init()
 	def stop(self):
 		if mainBoard.init() == 0:
 			return 0
+		mainBoard.sendRaw(base64.b64encode(cmdPlatformStop))
 		return mainBoard.sendRaw(cmdPlatformStop) 
 	def run(self, f):
 		if mainBoard.init() == 0:
@@ -116,9 +118,11 @@ class boardPlatform(object):
 		r = 0
 		if f > 0:
 			if mainBoard.sendRaw(cmdPlatformFwd) == 1:
+				mainBoard.sendRaw(base64.b64encode(cmdPlatformFwd))
 				r = 1
 		else: 
 			if mainBoard.sendRaw(cmdPlatformRev) == 1:
+				mainBoard.sendRaw(base64.b64encode(cmdPlatformRev))
 				r = 1
 			f = -f
 		if r == 1:
@@ -142,7 +146,7 @@ class boardPlatform(object):
 wheeledPlatform = boardPlatform()
 wheeledPlatform.stop()
 
-if wheeledPlatform.init1() == 1:
+if wheeledPlatform.init() == 1:
 	print "Init ok"
 else:
 	print "Init error"
@@ -154,6 +158,7 @@ class magneticScaner(object):
 	def __init__(self):
 		self._mutex = multiprocessing.Lock()
 		self.ser = ""
+		self._scanning = 0
 	def init(self):
 		if not self.ser == "":
 			try:
@@ -202,6 +207,8 @@ class magneticScaner(object):
 
 		return 1
 	def startScan(self):
+		if self._scanning == 1:
+			return 0
 		if self.init() == 0:
 			return 0
 		print "intros start scan"
@@ -223,8 +230,11 @@ class magneticScaner(object):
 		time.sleep(0.5)
 		self.sendRaw(b'\r')
 		time.sleep(0.5)
+		self._scanning = 1
 		return 1
 	def stopScan(self):
+		if self._scanning == 0:
+			return 0
 		if self.init() == 0:
 			return 0
 		print "intros stop scan"
@@ -246,10 +256,13 @@ class magneticScaner(object):
 		time.sleep(0.5)
 		self.sendRaw(b'Spd!\r')
 		time.sleep(1)
-		print self.readData()
-		
+		self._scanning = 0
+		print self.readData()	
 		return 1
-	def isOn(self): #####                         fix 
+	def isScanningRun(self):
+		return self._scanning
+	def isOn(self):  
+		print "intros isOn call: It is stub. Fix it!" 
 		return 1		
 	def sendRaw(self, data):
 		if not self.ser == "": 
@@ -320,13 +333,13 @@ class boardCamera(object):
 				return 0
 		
 	def setPos(self, x, y, z):
-		print "set pos stub"		
+		print "set pos stub. Check it!"		
 		self.sendRaw('$INE03,77,1,'+str(x)+',\n')
 		self.sendRaw('$INE03,77,2,'+str(y)+',\n')
 		self.sendRaw('$INE03,77,3,'+str(z)+',\n')
 		pass
 	def setZoom(self, z):
-		print "set zoom stub"
+		print "set zoom stub. Fix it!"
 		#self.sendRaw(base64.b64encode(""))
 		pass
 	def readData(self):
