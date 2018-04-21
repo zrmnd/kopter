@@ -45,8 +45,8 @@ class boardMain(object):
 	def sendRaw(self, data):
 		if not self.ser == "": 
 			try:		
-				self.ser.write(cmd.encode())
-				print cmd
+				self.ser.write(data.encode())
+				print data
 				time.sleep(0.5)
 				return 1
 			except:
@@ -312,6 +312,7 @@ class boardCamera(object):
 			self.ser = serial.Serial(t_port)
 			self.ser.baudrate = 115200
 			print "Camera" + self._id + " ser opened"
+			self.sendRaw('$INE01,77,1,4800,\n')
 			return 1
 		except: 
 			self.ser = ""
@@ -325,8 +326,8 @@ class boardCamera(object):
 	def sendRaw(self, data):
 		if not self.ser == "": 
 			try:		
-				self.ser.write(cmd.encode())
-				print cmd
+				self.ser.write(data.encode())
+				print data
 				time.sleep(0.5)
 				return 1
 			except:
@@ -340,6 +341,7 @@ class boardCamera(object):
 		pass
 	def setZoom(self, z):
 		print "set zoom stub. Fix it!"
+		self.sendRaw('$INE02,0,1,'+ base64.b64encode("1SddF="+str(z)+'\n') +',\n')
 		#self.sendRaw(base64.b64encode(""))
 		pass
 	def readData(self):
@@ -350,9 +352,9 @@ class boardCamera(object):
 		return data
 
 camera1 = boardCamera() 
-camera1.init('501')
+camera1.init('507')
 lidar = boardCamera()
-lidar.init('503')
+lidar.init('01A')
 
 
 
