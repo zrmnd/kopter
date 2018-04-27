@@ -21,7 +21,7 @@ char  udpReplyPacekt[] = "$PUA00,PULT V1.0 in debug,\n";  // a reply string to s
 WiFiClient tabletTcpClient;
 
 /* Soft AP network parameters */
-IPAddress tabletIP(192, 168, 8, 39);   ////////////////39 PC, 34 - odroid
+IPAddress tabletIP(192, 168, 8, 31);   ////////////////39 PC, 34 - odroid
 unsigned int tabletKeysHandlerPort = 4355;
 IPAddress broadcastIP(192, 168, 8, 255);
 IPAddress netMsk(255, 255, 255, 0);
@@ -50,7 +50,7 @@ uint8_t process1Sec() {
 void checkAndRepairConnection() {
     if (!tabletTcpClient.connected()) {
         tabletTcpClient.stop();
-        Serial.print("Try connect...");
+        //Serial.print("Try connect...");
         tabletTcpClient.connect(tabletIP, tabletKeysHandlerPort);
         delay(100);   
     }
@@ -100,12 +100,12 @@ void handleUdpIPAutoconf() {
     if (packetSize) {
         // receive incoming UDP packets
         // ///////////////////////////////// parse packet here and extract tabletIP 
-        Serial.printf("Received %d bytes from %s, port %d\n", packetSize, udpIPAutoconf.remoteIP().toString().c_str(), udpIPAutoconf.remotePort());
+        //Serial.printf("Received %d bytes from %s, port %d\n", packetSize, udpIPAutoconf.remoteIP().toString().c_str(), udpIPAutoconf.remotePort());
         int len = udpIPAutoconf.read(incomingPacket, 255);
         if (len > 0) {
             incomingPacket[len] = 0;
         }
-        Serial.printf("UDP packet contents: %s\n", incomingPacket);
+        //Serial.printf("UDP packet contents: %s\n", incomingPacket);
     }
 
     if (process1Sec()) {
@@ -145,23 +145,24 @@ void handleSerialPort() {
 
 //main setup
 void setup() {  
+    #warning 'Remove debug Serial.print, add parsing of incoming UDP packages'
     WiFi.mode(WIFI_STA);
-    Serial.begin(115200);
-    Serial.println("Starting...");
+    Serial.begin(9600);
+    //Serial.println("Starting...");
     WiFi.begin(ssid, password);
    
     while (WiFi.status() != WL_CONNECTED) {  // Wait for connection
         delay(500);
-        Serial.print(".");
+        //Serial.print(".");
     }
     Serial.println("");
-    Serial.print("Connected to ");
+   // Serial.print("Connected to ");
     Serial.println(ssid);
     Serial.print("IP address: ");
     Serial.println(WiFi.localIP());
     
     udpIPAutoconf.begin(udpIPAutoconfPort);
-    Serial.printf("Now listening at IP %s, UDP port %d\n", WiFi.localIP().toString().c_str(), udpIPAutoconfPort);
+    //Serial.printf("Now listening at IP %s, UDP port %d\n", WiFi.localIP().toString().c_str(), udpIPAutoconfPort);
 
 
     while (Serial.available() > 0) {
