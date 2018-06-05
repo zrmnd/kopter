@@ -1,2 +1,9 @@
 main_controllers_keil_projects/copter_main_board/*/
 main_controllers_keil_projects/pult_main_board/*/
+lidar_controller/universal_controller/EWARM/universal_controller/*/
+intros_controller/EWARM/universal_controller/EWARM/universal_controller/*/
+f103_keil/copter_main_board/*/
+f103_keil/pult_main_board/*/
+*.pbi
+*.o
+*.xcl
