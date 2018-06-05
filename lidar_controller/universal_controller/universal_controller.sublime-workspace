@@ -1,0 +1,665 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"arg",
+				"arg1"
+			],
+			[
+				"PPM",
+				"PPM1_ANGLE"
+			],
+			[
+				"DEV",
+				"DEVICE_TYPE"
+			],
+			[
+				"ST_",
+				"ST_FORWARDING_MODE"
+			],
+			[
+				"nmea",
+				"nmea_parse_msg"
+			],
+			[
+				"base",
+				"base64_data"
+			],
+			[
+				"uar",
+				"uart_data"
+			],
+			[
+				"uart_",
+				"uart_base64"
+			],
+			[
+				"ser",
+				"serial"
+			],
+			[
+				"PHOTO",
+				"PHOTO_VALUE_PIN"
+			],
+			[
+				"RFM23",
+				"RFM23BP_NIRQ_PORT"
+			],
+			[
+				"RFM",
+				"RFM23BP_SPI"
+			],
+			[
+				"RE",
+				"RELAXATION_TIME"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "usr/device_conf.h",
+			"settings":
+			{
+				"buffer_size": 10718,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "usr/init.c",
+			"settings":
+			{
+				"buffer_size": 4903,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Src/main.c",
+			"settings":
+			{
+				"buffer_size": 7899,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "usr/nmea_parser.h",
+			"settings":
+			{
+				"buffer_size": 2295,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "usr/nmea_parser.c",
+			"settings":
+			{
+				"buffer_size": 5770,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/chrns/Desktop/universal_controller/serial_sender.py",
+			"settings":
+			{
+				"buffer_size": 630,
+				"encoding": "UTF-8",
+				"line_ending": "Windows",
+				"name": "import pyserial"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Makefile/Make.sublime-build",
+					""
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					"Clean"
+				]
+			],
+			[
+				"Packages/Makefile/Make.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/chrns/Desktop/universal_controller/firmware/universal_controller",
+		"/C/Users/chrns/Desktop/universal_controller/firmware/universal_controller/Drivers",
+		"/C/Users/chrns/Desktop/universal_controller/firmware/universal_controller/Inc",
+		"/C/Users/chrns/Desktop/universal_controller/firmware/universal_controller/Src",
+		"/C/Users/chrns/Desktop/universal_controller/firmware/universal_controller/usr"
+	],
+	"file_history":
+	[
+		"/C/Users/chrns/Desktop/universal_controller/firmware/universal_controller/Src/usbd_cdc_if.c",
+		"/C/Users/chrns/Desktop/universal_controller/firmware/universal_controller/usr/state_machine.h",
+		"/C/Users/chrns/Desktop/universal_controller/firmware/universal_controller/Src/stm32f0xx_it.c",
+		"/C/Users/chrns/Desktop/universal_controller/firmware/universal_controller/usr/state_machine.c",
+		"/C/Users/chrns/Desktop/universal_controller/firmware/universal_controller/usr/init.h",
+		"/C/Users/chrns/Desktop/universal_controller/firmware/universal_controller/usr/base64.h",
+		"/C/Users/chrns/Desktop/universal_controller/firmware/universal_controller/usr/base64.c",
+		"/C/Users/chrns/Desktop/universal_controller/firmware/universal_controller/usr/init.c",
+		"/C/Users/chrns/Desktop/universal_controller/libs/STM32F0xx_Snippets_Package_V1.2.0/Projects/TIMERS/17_TimerEnablingAnother/main.c",
+		"/C/Users/chrns/Desktop/universal_controller/libs/STM32F0xx_Snippets_Package_V1.2.0/Projects/TIMERS/11_SlaveResetUpcounter/main.c",
+		"/C/Users/chrns/Desktop/universal_controller/libs/STM32F0xx_Snippets_Package_V1.2.0/Projects/TIMERS/09_ETR_ClearingOCREF/main.c",
+		"/C/Users/chrns/Desktop/universal_controller/libs/STM32F0xx_Snippets_Package_V1.2.0/Projects/TIMERS/06_OutputCompare/main.c",
+		"/C/Users/chrns/Desktop/universal_controller/libs/STM32F0xx_Snippets_Package_V1.2.0/Projects/TIMERS/01_UpcounterOnRisingEdgeOnTI2/main.c",
+		"/C/Users/chrns/Desktop/universal_controller/firmware/universal_controller/usr/nmea_parser.h",
+		"/C/Users/chrns/Desktop/ttt/tese/Src/main.c",
+		"/C/Users/chrns/Desktop/ttt/tese/Src/stm32f0xx_it.c",
+		"/C/Users/chrns/Desktop/STM32F0xx_StdPeriph_Lib_V1.5.0/Libraries/STM32F0xx_StdPeriph_Driver/src/stm32f0xx_usart.c",
+		"/C/Users/chrns/Desktop/universal_controller/libs/STM32F0xx_Snippets_Package_V1.2.0/Projects/USART/01_Transmitter/main.c",
+		"/C/Users/chrns/Desktop/STM32F0xx_StdPeriph_Lib_V1.5.0/Libraries/STM32F0xx_StdPeriph_Driver/inc/stm32f0xx_usart.h",
+		"/C/Users/chrns/Desktop/STM32F0xx_StdPeriph_Lib_V1.5.0/Projects/STM32F0xx_StdPeriph_Examples/USART/USART_TwoBoards/DataExchangeInterrupt/stm32f0xx_it.c",
+		"/C/Users/chrns/Desktop/STM32F0xx_StdPeriph_Lib_V1.5.0/Projects/STM32F0xx_StdPeriph_Examples/USART/USART_TwoBoards/DataExchangeInterrupt/main.c",
+		"/C/Users/chrns/Desktop/universal_controller/libs/STM32F0xx_Snippets_Package_V1.2.0/Projects/USART/02_Receiver/main.c",
+		"/C/Users/chrns/Desktop/universal_controller/libs/STM32F0xx_Snippets_Package_V1.2.0/Projects/TIMERS/07_PWM_EdgeAligned/main.c",
+		"/C/Users/chrns/Desktop/universal_controller/libs/usb_test/Inc/main.h",
+		"/C/Users/chrns/Desktop/universal_controller/libs/usb_test/Src/main.c",
+		"/C/Users/chrns/Desktop/universal_controller/libs/STM32F0xx_Snippets_Package_V1.2.0/Projects/TIMERS/08_PWM_CenterAligned/main.c",
+		"/C/Users/chrns/Desktop/universal_controller/libs/STM32F0xx_Snippets_Package_V1.2.0/Projects/GPIO/01_LockingMechanism/main.c",
+		"/C/Users/chrns/Desktop/universal_controller/firmware/universal_controller/usr/nmea_parser.c",
+		"/C/Users/chrns/Desktop/IoT/instructions.md",
+		"/C/Users/chrns/Desktop/IoT/Examples.md",
+		"/C/Users/chrns/Desktop/IoT/_lua/time.lua",
+		"/C/Users/chrns/Desktop/IoT/_lua/test100.lua",
+		"/C/Users/chrns/Desktop/IoT/_micropython/gpio2.py",
+		"/C/Users/chrns/Desktop/IoT/ESPlorer_guide.md",
+		"/C/Users/chrns/Desktop/universal_controller/firmware/universal_controller/Inc/main.h",
+		"/C/Users/chrns/Desktop/to_do.txt",
+		"/C/Users/chrns/Desktop/universal_controller/libs/usb_test/Src/usbd_cdc_if.c",
+		"/C/Users/chrns/Desktop/universal_controller/libs/usb_test/Inc/usb_device.h",
+		"/C/Users/chrns/Downloads/install",
+		"/C/Users/chrns/eclipse-workspace/test/src/test.c",
+		"/C/Users/chrns/Dropbox/Work/KiCAD/lib/esp.lib",
+		"/C/Users/chrns/Dropbox/Work/own/iot/pcbs/library/iot_course.lib",
+		"/C/Users/chrns/Dropbox/Work/freelance/baken/final/firmware/src/main.c",
+		"/C/Users/chrns/Dropbox/Work/writing/c_for_embedded_systems/text.md",
+		"/C/Users/chrns/Dropbox/Work/writing/c_for_embedded_systems/book.md",
+		"/C/Users/chrns/Dropbox/Work/freelance/baken/firmware/stm8l_var/main.c",
+		"/C/Users/chrns/Desktop/chrns/projects/rf_module/std/stm8s_gpio.h",
+		"/C/Users/chrns/Desktop/chrns/projects/rf_module/std/stm8s_gpio.c",
+		"/C/Users/chrns/Desktop/rf_module/hall.c",
+		"/C/Users/chrns/Desktop/STM8S_StdPeriph_Examples/ADC2/ADC2_ContinuousConversion/stm8s_it.c",
+		"/C/Users/chrns/Desktop/STM8S_StdPeriph_Examples/ADC2/ADC2_ContinuousConversion/main.c",
+		"/C/Users/chrns/Desktop/STM8S_StdPeriph_Examples/IWDG/IWDG_Example/main.c",
+		"/C/Users/chrns/Desktop/chrns/projects/rf_module/main.h",
+		"/C/Users/chrns/Desktop/STM8S_StdPeriph_Examples/IWDG/IWDG_Example/stm8s_it.c",
+		"/C/Users/chrns/Desktop/chrns/projects/rf_module/std/stm8s_clk.h",
+		"/C/Users/chrns/Desktop/STM8S_StdPeriph_Examples/CLK/CLK_ClockSelection/main.c",
+		"/C/Users/chrns/Desktop/GPIO_Toggle/main.c",
+		"/C/Users/chrns/Desktop/chrns/projects/rf_module/rfm23bp.c",
+		"/C/Users/chrns/Desktop/chrns/projects/rf_module/rfm23bp.h",
+		"/C/Users/chrns/Desktop/rfm23bp/rfm23bp.h",
+		"/C/Users/chrns/Desktop/rfm23bp/rfm23bp.c",
+		"/C/Users/chrns/Desktop/rfm23bp/rfm23bp_config.h",
+		"/C/Users/chrns/Dropbox/rfm22b.c",
+		"/C/Users/chrns/Dropbox/rfm22b-23b_registers.h",
+		"/C/Users/chrns/Desktop/chrns/projects/rf_module/main.c",
+		"/C/Users/chrns/Desktop/12345678юс.c",
+		"/C/Users/chrns/Desktop/chrns/projects/rf_module/rfm23bp_config.h",
+		"/C/Users/chrns/Desktop/chrns/projects/rf_module/device_conf.h",
+		"/C/Users/chrns/Dropbox/Public/chrns.com/c_for_mcu/book.html",
+		"/C/Users/chrns/Desktop/chrns/projects/rf_module.h",
+		"/C/Users/chrns/Desktop/chrns/projects/rf_module/rf_module.c",
+		"/C/Users/chrns/Desktop/1234.txt",
+		"/C/Users/chrns/Desktop/chrns/projects/rf_module/rf_module.h",
+		"/C/Users/Chrns/Downloads/uavcan.txt",
+		"/C/Users/Chrns/Downloads/ipython_install.cmd",
+		"/C/Users/Chrns/Desktop/chrns/rf_module/communication.c",
+		"/C/Users/Chrns/Desktop/chrns/rf_module/rf_module.h",
+		"/C/Users/Chrns/Desktop/chrns/rf_module/rf_module.c",
+		"/C/Users/Chrns/Desktop/chrns/rf_module/device_conf.h",
+		"/C/Users/Chrns/Desktop/chrns/rf_module/std/stm8s_exti.c",
+		"/C/Users/Chrns/Desktop/chrns/rf_module/main.h",
+		"/C/Users/Chrns/Desktop/chrns/rf_module/main.c",
+		"/C/Users/Chrns/Desktop/chrns/rf_module/std/stm8s_it.c",
+		"/C/Users/Chrns/Desktop/chrns/STM8S_StdPeriph_Lib/Project/STM8S_StdPeriph_Examples/EXTI/EXTI_InterruptPriority/main.c",
+		"/C/Users/Chrns/Desktop/chrns/STM8S_StdPeriph_Lib/Project/STM8S_StdPeriph_Examples/EXTI/EXTI_InterruptPriority/stm8s_it.c",
+		"/C/Users/kryst/Desktop/12312.txt",
+		"/C/Users/kryst/Desktop/123/tou.txt",
+		"/C/Users/kryst/Desktop/123/ger.txt",
+		"/C/Users/kryst/Desktop/123/1.txt",
+		"/D/!old/tmp/release",
+		"/D/tmp/Безымянный документ",
+		"/C/Users/kryst/Desktop/STM8S_StdPeriph_Lib/Project/STM8S_StdPeriph_Examples/SPI/SPI_FullDuplexUART1/main.c",
+		"/C/Users/kryst/Desktop/STM8S_StdPeriph_Lib/Project/STM8S_StdPeriph_Examples/CLK/CLK_MaxSpeed/main.c",
+		"/C/Users/kryst/Desktop/STM8S_StdPeriph_Lib/Project/STM8S_StdPeriph_Examples/CLK/CLK_ClockSecuritySystem/main.c",
+		"/C/Users/kryst/Desktop/STM8S_StdPeriph_Lib/Project/STM8S_StdPeriph_Examples/CLK/CLK_ClockSelection/main.c",
+		"/C/Users/kryst/Desktop/STM8S_StdPeriph_Lib/Project/STM8S_StdPeriph_Examples/UART1/UART1_Interrupt/stm8s_it.c",
+		"/C/Users/kryst/Desktop/STM8S_StdPeriph_Lib/Project/STM8S_StdPeriph_Examples/UART1/UART1_Interrupt/main.c",
+		"/C/Users/kryst/Desktop/projects/wi_fi_clock/pcb/library/wichaiter_components.pretty/roc_logo.kicad_mod",
+		"/C/Users/kryst/Desktop/STM8S_StdPeriph_Lib/Project/STM8S_StdPeriph_Examples/ADC2/ADC2_ContinuousConversion/main.c",
+		"/C/Users/kryst/Desktop/STM8S_StdPeriph_Lib/Project/STM8S_StdPeriph_Examples/ADC2/ADC2_ContinuousConversion/stm8s_it.c",
+		"/C/Users/kryst/Desktop/STM8S_StdPeriph_Lib/Project/STM8S_StdPeriph_Examples/EXTI/EXTI_InterruptPriority/stm8s_it.c",
+		"/C/Users/kryst/Desktop/STM8S_StdPeriph_Lib/Project/STM8S_StdPeriph_Examples/EXTI/EXTI_InterruptPriority/main.c",
+		"/C/Users/kryst/Desktop/nla2016/crash_course.py",
+		"/D/tmp/old/tmp/wifi_clock____/app/esp8266.c",
+		"/D/tmp/chrns/chrns/Projects/programming/stm32/wichaiter/esp8266.h",
+		"/D/tmp/!resort/Новая папка (2)/flash.c",
+		"/D/tmp/!resort/Новая папка (2)/main.c",
+		"/D/Binaries/SOAPVDIR.CMD",
+		"/D/tmp/chrns/chrns/BackUp/main.c",
+		"/D/tmp/chrns/chrns/BackUp/Безымянный документ",
+		"/D/tmp/chrns/chrns/BackUp/old/tmp/чясчя",
+		"/D/tmp/chrns/chrns/BackUp/old/tmp/wifi_clock/app/main.c",
+		"/D/tmp/chrns/chrns/BackUp/old/tmp/stm32/main.c",
+		"/D/tmp/chrns/chrns/BackUp/old/tmp/stm32/wifi_clock/app/main.c",
+		"/D/tmp/chrns/chrns/BackUp/old/tmp/stm32/wifi_clock/app/esp8266.c",
+		"/D/tmp/chrns/chrns/BackUp/old/tmp/stm32/wifi_clock/app/esp8266.h",
+		"/D/tmp/chrns/chrns/BackUp/old/stm32/wichaiter/app/main.c",
+		"/D/tmp/tmp/esp8266.c",
+		"/D/files/projects/firmwares/stm32/wichaiter/app/esp8266.h",
+		"/D/tmp/chrns/chrns/Projects/programming/stm32/wichaiter/esp8266.c",
+		"/D/Download/p6WYYjOIo_4.srt",
+		"/D/tmp/!resort/main/main_part.c",
+		"/D/tmp/!resort/docs/main.c",
+		"/D/libs/stm8/STM8S_StdPeriph_Lib/Project/STM8S_StdPeriph_Template/main.c",
+		"/D/tmp/own/mm.c",
+		"/C/Users/kryst/Desktop/main.c",
+		"/C/Users/kryst/Desktop/projects/barrier/memTest/main.c",
+		"/C/Users/kryst/Desktop/web-site/files/stylesheet.css"
+	],
+	"find":
+	{
+		"height": 50.0
+	},
+	"find_in_files":
+	{
+		"height": 134.0,
+		"where_history":
+		[
+			"base64.h",
+			"base64.c",
+			"base64.h",
+			"base64.c"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"CMD_UART_TX",
+			"TIM2",
+			"TIM3",
+			"nmea_parser",
+			"unsigned char",
+			"unsigned int",
+			"MX_USART1_UART_Init",
+			"USART_ClearITPendingBit",
+			"clear",
+			"Configure_GPIO_USART1",
+			"USART_StopBits_1",
+			"USART_Init",
+			"SEND",
+			"Configure_GPIO_USART1",
+			"SEND",
+			"Configure_GPIO_USART1",
+			"MX_USB_DEVICE_Init",
+			"_Error_Handler",
+			"HAL_Init",
+			"SystemClock_Config",
+			"HAL_Init",
+			"MX_GPIO_Init",
+			"TIM2_PERIOD",
+			"180",
+			"STATE_CMD_SET_SERVO2_ANGLE",
+			"handle_byte",
+			"htim1",
+			"TIMx_BASE",
+			"Configure_GPIO_USART1",
+			"pr2six",
+			"basis_64"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"uint8_t",
+			"uint32_t",
+			"SYM_MAP",
+			"BASIS"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 5,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "usr/device_conf.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10718,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								10209,
+								10226
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 5095.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "usr/init.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4903,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3600,
+								3600
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1218.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "Src/main.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7899,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								971,
+								971
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 783.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "usr/nmea_parser.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2295,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1415,
+								1426
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1219.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "usr/nmea_parser.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5770,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3680,
+								3680
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 5481.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/C/Users/chrns/Desktop/universal_controller/serial_sender.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 630,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								455,
+								455
+							]
+						],
+						"settings":
+						{
+							"auto_name": "import pyserial",
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 37.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 268.0
+	},
+	"output.find_results":
+	{
+		"height": 174.0
+	},
+	"pinned_build_system": "",
+	"project": "universal_controller.sublime-project",
+	"replace":
+	{
+		"height": 70.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"approach  —  подход"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 219.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

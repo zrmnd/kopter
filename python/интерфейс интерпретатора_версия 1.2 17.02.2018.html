@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge' />
+	<meta http-equiv='content-type' content='text/html; charset=utf-8'/>
+
+	<style type='text/css'>
+		body, div, p, table {
+			font-size:10pt;
+			font-family:Verdana;
+		}
+
+		img{border:none}
+		
+	</style>
+	
+</head>
+
+<body>
+<hr>
+Версия документа 1.2 (17.02.2018)
+<hr>
+Список элементарных команд: 
+<ol>
+<ol>
+<li>CCamera.StartRec(string file_name)  // cтарт записи видео или непрерывного снятия точек (в случае лидара). аргумент - относительный путь и имя файла, куда будет вестись запись</li>
+<li>CCamera.StopRec()</li>
+<li>CCamera.SetPosition(vector(3));</li>
+<li>CCamera.GetPosition(): vector(3)</li>
+<li>CCamera.TakePhoto(string file_name); // сделать кадр. аргумент - относительный путь и имя файла, куда будет сохранен кадр</li>
+<li>CCamera.SetZoom(число);</li>
+<li>CCamera.GetZoom(): число</li>
+<li>CWheeledPlatform.GetCurrentPosition(): double;</li>
+<li>CWheeledPlatform.GotoPos(double x);</li>
+<li>CWheeledPlatform.SetSpeed(int speed);</li>
+<li>CWireScanner.CalibratingStart();</li>
+<li>CWireScanner.CalibratingStop();</li>
+<li>CWireScanner.StartScan();</li>
+<li>CWireScanner.StopScan();</li>
+<li>CWireScanner.DownloadMemory();</li>
+<li>CWireScanner.EraseMemory();</li>
+<li>CFlyingPlatform.GetCurrentPosition(): vector(4) - x,y,z,yaw</li>
+<li>CFlyingPlatform.Goto(vector(4));</li>
+<li>CFlyingPlatform.SeatOnTopWire();</li>
+<li>CCableWalker.GetBatteryCharge(): float voltage</li>
+<li>CCableWalker.GetOrientation(): vector(3) - roll, pitch, yaw</li>
+<li>CCableWalker.GetGPSCoordinate():</li>
+<li>CCableWalker.GetVersion(): string</li>
+<li>CSystem.Delay(ms)</li>
+</ol>
+</ol>
+<hr>
+Реализация приведенных "элементарных" функций представляет собой вызовы функции отправки в TCP/IP сокет текстовых строк, прием ответа и его преобразования в возвращаемые аргументы. 
+<hr>
+Обмен строк по аналогии с NMEA0183, с небольшими упрощениями:
+<pre>$MEI01,53,32,1,&quot;mounts/1/1.jpg&quot;,&lt;LF&gt;</pre>
+
+<pre>$MSI02,57,1,4F&lt;LF&gt;</pre>
+
+<pre>$CPA02,59,24355.65,3432.78,65.78965,FF&lt;LF&gt;</pre>
+
+<pre>$CPA01,64,OK,&lt;LF&gt;</pre>
+
+<pre>$CPA02,64,OK,&lt;LF&gt;</pre>
+
+<ul>
+<li>сообщение начинается с $ (hex 24);</li>
+<li>далее идут 2 буквы - идентификатор источника сообщения</li>
+<ul>
+<li>PU - сообщение от пульта</li>
+<li>CP - сообщение от коптера</li>
+<li>SM - сообщение от симулятора</li>
+<li>ME - сообщение от редактора миссий</li>
+<li>MS - сообщение от миссии</li>
+</ul>
+<li>дальше три цифры/буквы</li>
+<ul>
+<li>первая I означает принадлежность к семейству команд интерпретатора, далее идет номер команды 00..99. Первый аргумент всех команд камеры - номер камеры. Для примера приведены команды, которые взаимодействуют с камерой 1.</li>
+</ul>
+<li>дальше идут аргументы (цифры и буквы через запятую), первый аргумент - циклический номер сообщения, 0..255</li>
+<li>последний аргумент (может опускаться; запятая остается) - восьмибитная XOR-сумма всех символов (включая ',' и '^') в строке между «$» и «*» приведенная к двум ASCII-символам в верхнем регистре для 16-ричного представления байта (0-9,A-F)</li>
+<li>завершает все 
+<pre>&lt;LF&gt;</pre>
+ - hex 0A (перенос строки)</li>
+</ul>
+<hr>
+Интерпретатор в ответ на команды присылает циклический номер пакета, ОК или аргументы.<br/>
+Интерпретатор отвечает командами типа <code>A01</code> или <code>A02</code> на все команды. На команды, которые не требуют времени на физическое выполнение результат содержится в аргументах. На команды, требующих физического выполнение интерпретатор сначала присылает <code>A01</code>, означающую успешный прием, а по завершению выполнения - <code>A02</code>. Примеры:
+<ol>
+<ol>
+<li>миссия посылает CCamera.StopRec() 
+<pre>$MSI02,57,1,&lt;LF&gt;</pre>
+ интерпретатор отвечает -> 
+<pre>$CPA02,57,OK,&lt;LF&gt;</pre>
+</li>
+<li>миссия посылает CCamera.GetPosition() 
+<pre>$MSI04,59,1,&lt;LF&gt;</pre>
+ интерпретатор отвечает -> 
+<pre>$CPA02,59,24355.65,3432.78,65.78965,&lt;LF&gt;</pre>
+</li>
+<li>миссия посылает CWheeledPlatform.GotoPos(double x) 
+<pre>$MSI12,64,435.432,&lt;LF&gt;</pre>
+ интерпретатор отвечает -> 
+<pre>$CPA01,64,OK,&lt;LF&gt;</pre>
+после физического выполнения отвечает ->  
+<pre>$CPA02,64,OK,&lt;LF&gt;</pre>
+</li>
+</ol>
+</ol><strike>Максимальная длина сообщения ограничена 82 символами (NMEA 0183 rev 3.0)</strike><br/>
+<br/>
+<table border="1">
+<tr>
+<td>Пример команды</td>
+<td>Элементарная функция</td>
+<td>Пример возвращаемой строки</td>
+</tr>
+<tr>
+<td>
+<pre>$MEI01,56,1,&quot;mounts/1/1.mp4&quot;,&lt;LF&gt;</pre>
+</td>
+<td>CCamera.StartRec(string file_name)   </td>
+<td>
+<pre>$CPA02,56,OK,&lt;LF&gt;</pre>
+ </td>
+</tr>
+<tr>
+<td>
+<pre>$MEI02,57,1,&lt;LF&gt;</pre>
+ </td>
+<td>CCamera.StopRec() </td>
+<td>
+<pre>$CPA02,57,OK,&lt;LF&gt;</pre>
+</td>
+</tr>
+<tr>
+<td>
+<pre>$MEI03,58,1,23456.342,2336.43,3243.3,&lt;LF&gt;</pre>
+ </td>
+<td>CCamera.SetPosition(vector(3));</td>
+<td>
+<pre>$CPA01,58,OK,&lt;LF&gt;</pre>
+
+<pre>$CPA02,58,OK,&lt;LF&gt;</pre>
+</td>
+</tr>
+<tr>
+<td> 
+<pre>$MEI04,59,1,&lt;LF&gt;</pre>
+ </td>
+<td>CCamera.GetPosition(): vector(3) </td>
+<td>
+<pre>$CPA02,59,24355.65,3432.78,65.78965,&lt;LF&gt;</pre>
+</td>
+</tr>
+<tr>
+<td>
+<pre>$MEI05,60,1,&quot;mounts/1/1.jpg&quot;,&lt;LF&gt;</pre>
+ </td>
+<td>CCamera.TakePhoto(string file_name);</td>
+<td>
+<pre>$CPA02,60,OK,&lt;LF&gt;</pre>
+</td>
+</tr>
+<tr>
+<td>
+<pre>$MEI06,61,1,5,&lt;LF&gt;</pre>
+ </td>
+<td>CCamera.SetZoom(число); </td>
+<td>
+<pre>$CPA01,61,OK,&lt;LF&gt;</pre>
+
+<pre>$CPA02,61,OK,&lt;LF&gt;</pre>
+</td>
+</tr>
+<tr>
+<td>
+<pre>$MEI07,62,1,&lt;LF&gt;</pre>
+ </td>
+<td>CCamera.GetZoom(): число</td>
+<td>
+<pre>$CPA02,62,10,&lt;LF&gt;</pre>
+</td>
+</tr>
+<tr>
+<td>
+<pre>$MEI11,63,&lt;LF&gt;</pre>
+ </td>
+<td>CWheeledPlatform.GetCurrentPosition(): double;</td>
+<td>
+<pre>$CPA02,63,6734.89,&lt;LF&gt;</pre>
+</td>
+</tr>
+<tr>
+<td>
+<pre>$MEI12,64,435.432,&lt;LF&gt;</pre>
+</td>
+<td>CWheeledPlatform.GotoPos(double x);</td>
+<td>
+<pre>$CPA01,I12,64,OK,&lt;LF&gt;</pre>
+
+<pre>$CPA02,64,OK,&lt;LF&gt;</pre>
+</td>
+</tr>
+<tr>
+<td>
+<pre>$MEI13,65,60,&lt;LF&gt;</pre>
+</td>
+<td>CWheeledPlatform.SetSpeed(int speed); </td>
+<td>
+<pre>$CPA02,65,OK,&lt;LF&gt;</pre>
+</td>
+</tr>
+<tr>
+<td>
+<pre>$MEI21,68,&lt;LF&gt;</pre>
+</td>
+<td>CWireScanner.CalibratingStart();</td>
+<td>
+<pre>$CPA02,68,OK,&lt;LF&gt;</pre>
+</td>
+</tr>
+<tr>
+<td>
+<pre>$MEI22,69,&lt;LF&gt;</pre>
+</td>
+<td>CWireScanner.CalibratingStop();</td>
+<td>
+<pre>$CPA02,69,OK,&lt;LF&gt;</pre>
+</td>
+</tr>
+<tr>
+<td>
+<pre>$MEI23,70,&lt;LF&gt;</pre>
+</td>
+<td>CWireScanner.StartScan();</td>
+<td>
+<pre>$CPA02,70,OK,&lt;LF&gt;</pre>
+</td>
+</tr>
+<tr>
+<td>
+<pre>$MEI24,71,&lt;LF&gt;</pre>
+</td>
+<td>CWireScanner.StopScan(); </td>
+<td>
+<pre>$CPA02,71,OK,&lt;LF&gt;</pre>
+</td>
+</tr>
+<tr>
+<td>
+<pre>$MEI25,72,&lt;LF&gt;</pre>
+</td>
+<td>CWireScanner.DownloadMemory(); </td>
+<td>
+<pre>$CPA01,72,OK,&lt;LF&gt;</pre>
+
+<pre>$CPA02,72,OK,&lt;LF&gt;</pre>
+</td>
+</tr>
+<tr>
+<td>
+<pre>$MEI26,73,&lt;LF&gt;</pre>
+</td>
+<td>CWireScanner.EraseMemory();</td>
+<td>
+<pre>$CPA01,73,OK,&lt;LF&gt;</pre>
+
+<pre>$CPA02,73,OK,&lt;LF&gt;</pre>
+</td>
+</tr>
+<tr>
+<td>
+<pre>$MEI31,74,&lt;LF&gt;</pre>
+</td>
+<td>CFlyingPlatform.GetCurrentPosition(): vector(4) - x,y,z,yaw</td>
+<td>
+<pre>$CPA02,74,3432.64,43223.545,5634.56,45,&lt;LF&gt;</pre>
+</td>
+</tr>
+<tr>
+<td>
+<pre>$MEI32,75,3433.4332,435.456,54567.433,250,&lt;LF&gt;</pre>
+</td>
+<td>CFlyingPlatform.Goto(vector(4)); </td>
+<td>
+<pre>$CPA01,75,OK,&lt;LF&gt;</pre>
+
+<pre>$CPA02,75,OK,&lt;LF&gt;</pre>
+</td>
+</tr>
+<tr>
+<td>
+<pre>$MEI33,76,&lt;LF&gt;</pre>
+</td>
+<td>CFlyingPlatform.SeatOnTopWire(); </td>
+<td>
+<pre>$CPA01,76,OK,&lt;LF&gt;</pre>
+
+<pre>$CPA02,76,OK,&lt;LF&gt;</pre>
+</td>
+</tr>
+<tr>
+<td>
+<pre>$MEI41,77,&lt;LF&gt;</pre>
+</td>
+<td>CCableWalker.GetBatteryCharge(): float voltage </td>
+<td>
+<pre>$CPA02,77,34.56,&lt;LF&gt;</pre>
+</td>
+</tr>
+<tr>
+<td>
+<pre>$MEI42,78,&lt;LF&gt;</pre>
+</td>
+<td>CCableWalker.GetOrientation(): vector(3) - roll, pitch, yaw</td>
+<td>
+<pre>$CPA02,78,180,180,57,&lt;LF&gt;</pre>
+</td>
+</tr>
+<tr>
+<td>
+<pre>$MEI43,79,&lt;LF&gt;</pre>
+</td>
+<td>CCableWalker.GetAbsCoordinate():vector(4)</td>
+<td>
+<pre>$CPA02,79,762.43,4356.67,43.5,180,&lt;LF&gt;</pre>
+</td>
+</tr>
+<tr>
+<td>
+<pre>$MEI44,80,3726.34,2432.567,2321.32,250,&lt;LF&gt;</pre>
+</td>
+<td>CCableWalker.GotoAbsCoordinate(vector(4))</td>
+<td>
+<pre>$CPA01,80,OK,&lt;LF&gt;</pre>
+
+<pre>$CPA02,80,OK,&lt;LF&gt;</pre>
+</td>
+</tr>
+<tr>
+<td>
+<pre>$MEI45,81,&lt;LF&gt;</pre>
+</td>
+<td>CCableWalker.GetGPSCoordinate(): </td>
+<td>
+<pre>$CPA02,81,41.40338,2.17403,&lt;LF&gt;</pre>
+</td>
+</tr>
+<tr>
+<td>
+<pre>$MEI46,82,&lt;LF&gt;</pre>
+</td>
+<td>CCableWalker.GetVersion(): string</td>
+<td>
+<pre>$CPA02,82,KANATOKHOD v1.0a ODROID XU4 Ubuntu XX,&lt;LF&gt;</pre>
+</td>
+</tr>
+</table><br/>
+</body>
+</html>

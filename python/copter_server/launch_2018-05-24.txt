@@ -1,0 +1,853 @@
+2018-05-24 13:12:15.578000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:15.752000 Traceback (most recent call last):
+2018-05-24 13:12:15.758000 File "C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py", line 14, in <module>
+2018-05-24 13:12:15.767000 Process terminated with exit code 1
+2018-05-24 13:12:15.774000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:15.828000 Traceback (most recent call last):
+2018-05-24 13:12:15.839000 Process terminated with exit code 1
+2018-05-24 13:12:15.849000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:15.903000 Traceback (most recent call last):
+2018-05-24 13:12:15.911000 File "C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py", line 14, in <module>
+2018-05-24 13:12:15.918000 Process terminated with exit code 1
+2018-05-24 13:12:15.935000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:15.990000 Traceback (most recent call last):
+2018-05-24 13:12:16 Process terminated with exit code 1
+2018-05-24 13:12:16.008000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:16.065000 Traceback (most recent call last):
+2018-05-24 13:12:16.074000 File "C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py", line 14, in <module>
+2018-05-24 13:12:16.080000 Process terminated with exit code 1
+2018-05-24 13:12:16.087000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:16.142000 Traceback (most recent call last):
+2018-05-24 13:12:16.152000 Process terminated with exit code 1
+2018-05-24 13:12:16.160000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:16.217000 Traceback (most recent call last):
+2018-05-24 13:12:16.228000 Process terminated with exit code 1
+2018-05-24 13:12:16.235000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:16.290000 Traceback (most recent call last):
+2018-05-24 13:12:16.299000 Process terminated with exit code 1
+2018-05-24 13:12:16.306000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:16.362000 Traceback (most recent call last):
+2018-05-24 13:12:16.371000 File "C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py", line 14, in <module>
+2018-05-24 13:12:16.377000 Process terminated with exit code 1
+2018-05-24 13:12:16.385000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:16.440000 Traceback (most recent call last):
+2018-05-24 13:12:16.450000 Process terminated with exit code 1
+2018-05-24 13:12:16.460000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:16.515000 Traceback (most recent call last):
+2018-05-24 13:12:16.524000 Process terminated with exit code 1
+2018-05-24 13:12:16.532000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:16.591000 Traceback (most recent call last):
+2018-05-24 13:12:16.602000 Process terminated with exit code 1
+2018-05-24 13:12:16.610000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:16.668000 Traceback (most recent call last):
+2018-05-24 13:12:16.677000 File "C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py", line 14, in <module>
+2018-05-24 13:12:16.683000 Process terminated with exit code 1
+2018-05-24 13:12:16.690000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:16.752000 Traceback (most recent call last):
+2018-05-24 13:12:16.760000 Process terminated with exit code 1
+2018-05-24 13:12:16.769000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:16.835000 Traceback (most recent call last):
+2018-05-24 13:12:16.846000 Process terminated with exit code 1
+2018-05-24 13:12:16.857000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:16.911000 Traceback (most recent call last):
+2018-05-24 13:12:16.921000 Process terminated with exit code 1
+2018-05-24 13:12:16.932000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:16.991000 Traceback (most recent call last):
+2018-05-24 13:12:16.999000 File "C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py", line 14, in <module>
+2018-05-24 13:12:17.006000 Process terminated with exit code 1
+2018-05-24 13:12:17.013000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:17.072000 Traceback (most recent call last):
+2018-05-24 13:12:17.082000 Process terminated with exit code 1
+2018-05-24 13:12:17.090000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:17.150000 Traceback (most recent call last):
+2018-05-24 13:12:17.157000 Process terminated with exit code 1
+2018-05-24 13:12:17.164000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:17.219000 Traceback (most recent call last):
+2018-05-24 13:12:17.226000 Process terminated with exit code 1
+2018-05-24 13:12:17.233000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:17.291000 Traceback (most recent call last):
+2018-05-24 13:12:17.300000 Process terminated with exit code 1
+2018-05-24 13:12:17.307000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:17.363000 Traceback (most recent call last):
+2018-05-24 13:12:17.371000 Process terminated with exit code 1
+2018-05-24 13:12:17.378000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:17.432000 Traceback (most recent call last):
+2018-05-24 13:12:17.441000 Process terminated with exit code 1
+2018-05-24 13:12:17.448000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:17.505000 Traceback (most recent call last):
+2018-05-24 13:12:17.513000 File "C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py", line 14, in <module>
+2018-05-24 13:12:17.519000 Process terminated with exit code 1
+2018-05-24 13:12:17.526000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:17.585000 Traceback (most recent call last):
+2018-05-24 13:12:17.592000 Process terminated with exit code 1
+2018-05-24 13:12:17.601000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:17.658000 Traceback (most recent call last):
+2018-05-24 13:12:17.668000 Process terminated with exit code 1
+2018-05-24 13:12:17.678000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:17.735000 Traceback (most recent call last):
+2018-05-24 13:12:17.744000 Process terminated with exit code 1
+2018-05-24 13:12:17.754000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:17.809000 Traceback (most recent call last):
+2018-05-24 13:12:17.821000 Process terminated with exit code 1
+2018-05-24 13:12:17.828000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:17.897000 Traceback (most recent call last):
+2018-05-24 13:12:17.907000 Process terminated with exit code 1
+2018-05-24 13:12:17.914000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:17.967000 Traceback (most recent call last):
+2018-05-24 13:12:17.976000 Process terminated with exit code 1
+2018-05-24 13:12:17.986000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:18.041000 Traceback (most recent call last):
+2018-05-24 13:12:18.051000 Process terminated with exit code 1
+2018-05-24 13:12:18.059000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:18.119000 Traceback (most recent call last):
+2018-05-24 13:12:18.127000 Process terminated with exit code 1
+2018-05-24 13:12:18.136000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:18.195000 Traceback (most recent call last):
+2018-05-24 13:12:18.206000 Process terminated with exit code 1
+2018-05-24 13:12:18.214000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:18.269000 Traceback (most recent call last):
+2018-05-24 13:12:18.279000 Process terminated with exit code 1
+2018-05-24 13:12:18.288000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:18.343000 Traceback (most recent call last):
+2018-05-24 13:12:18.352000 Process terminated with exit code 1
+2018-05-24 13:12:18.361000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:18.415000 Traceback (most recent call last):
+2018-05-24 13:12:18.424000 Process terminated with exit code 1
+2018-05-24 13:12:18.431000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:18.487000 Traceback (most recent call last):
+2018-05-24 13:12:18.497000 Process terminated with exit code 1
+2018-05-24 13:12:18.505000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:18.560000 Traceback (most recent call last):
+2018-05-24 13:12:18.569000 Process terminated with exit code 1
+2018-05-24 13:12:18.579000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:18.638000 Traceback (most recent call last):
+2018-05-24 13:12:18.646000 Process terminated with exit code 1
+2018-05-24 13:12:18.654000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:18.711000 Traceback (most recent call last):
+2018-05-24 13:12:18.720000 Process terminated with exit code 1
+2018-05-24 13:12:18.729000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:18.786000 Traceback (most recent call last):
+2018-05-24 13:12:18.796000 Process terminated with exit code 1
+2018-05-24 13:12:18.804000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:18.867000 Traceback (most recent call last):
+2018-05-24 13:12:18.877000 Process terminated with exit code 1
+2018-05-24 13:12:18.885000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:18.942000 Traceback (most recent call last):
+2018-05-24 13:12:18.951000 Process terminated with exit code 1
+2018-05-24 13:12:18.960000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:19.016000 Traceback (most recent call last):
+2018-05-24 13:12:19.026000 Process terminated with exit code 1
+2018-05-24 13:12:19.034000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:19.090000 Traceback (most recent call last):
+2018-05-24 13:12:19.100000 Process terminated with exit code 1
+2018-05-24 13:12:19.107000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:19.166000 Traceback (most recent call last):
+2018-05-24 13:12:19.175000 Process terminated with exit code 1
+2018-05-24 13:12:19.183000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:19.239000 Traceback (most recent call last):
+2018-05-24 13:12:19.248000 Process terminated with exit code 1
+2018-05-24 13:12:19.257000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:19.315000 Traceback (most recent call last):
+2018-05-24 13:12:19.324000 Process terminated with exit code 1
+2018-05-24 13:12:19.332000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:19.389000 Traceback (most recent call last):
+2018-05-24 13:12:19.398000 Process terminated with exit code 1
+2018-05-24 13:12:19.414000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:19.470000 Traceback (most recent call last):
+2018-05-24 13:12:19.480000 Process terminated with exit code 1
+2018-05-24 13:12:19.488000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:19.543000 Traceback (most recent call last):
+2018-05-24 13:12:19.555000 Process terminated with exit code 1
+2018-05-24 13:12:19.563000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:19.624000 Traceback (most recent call last):
+2018-05-24 13:12:19.634000 Process terminated with exit code 1
+2018-05-24 13:12:19.643000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:19.700000 Traceback (most recent call last):
+2018-05-24 13:12:19.730000 Process terminated with exit code 1
+2018-05-24 13:12:19.760000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:19.815000 Traceback (most recent call last):
+2018-05-24 13:12:19.857000 Process terminated with exit code 1
+2018-05-24 13:12:19.887000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:19.958000 Traceback (most recent call last):
+2018-05-24 13:12:19.990000 Process terminated with exit code 1
+2018-05-24 13:12:19.999000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:20.053000 Traceback (most recent call last):
+2018-05-24 13:12:20.063000 Process terminated with exit code 1
+2018-05-24 13:12:20.073000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:20.132000 Traceback (most recent call last):
+2018-05-24 13:12:20.143000 Process terminated with exit code 1
+2018-05-24 13:12:20.151000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:20.207000 Traceback (most recent call last):
+2018-05-24 13:12:20.217000 Process terminated with exit code 1
+2018-05-24 13:12:20.225000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:20.282000 Traceback (most recent call last):
+2018-05-24 13:12:20.292000 Process terminated with exit code 1
+2018-05-24 13:12:20.300000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:20.358000 Traceback (most recent call last):
+2018-05-24 13:12:20.367000 Process terminated with exit code 1
+2018-05-24 13:12:20.377000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:20.438000 Traceback (most recent call last):
+2018-05-24 13:12:20.447000 Process terminated with exit code 1
+2018-05-24 13:12:20.457000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:20.514000 Traceback (most recent call last):
+2018-05-24 13:12:20.529000 Process terminated with exit code 1
+2018-05-24 13:12:20.538000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:20.599000 Traceback (most recent call last):
+2018-05-24 13:12:20.612000 Process terminated with exit code 1
+2018-05-24 13:12:20.625000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:20.684000 Traceback (most recent call last):
+2018-05-24 13:12:20.693000 Process terminated with exit code 1
+2018-05-24 13:12:20.702000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:20.757000 Traceback (most recent call last):
+2018-05-24 13:12:20.768000 Process terminated with exit code 1
+2018-05-24 13:12:20.778000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:20.838000 Traceback (most recent call last):
+2018-05-24 13:12:20.850000 Process terminated with exit code 1
+2018-05-24 13:12:20.858000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:20.917000 Traceback (most recent call last):
+2018-05-24 13:12:20.926000 Process terminated with exit code 1
+2018-05-24 13:12:20.935000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:20.994000 Traceback (most recent call last):
+2018-05-24 13:12:21.004000 Process terminated with exit code 1
+2018-05-24 13:12:21.012000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:21.072000 Traceback (most recent call last):
+2018-05-24 13:12:21.082000 Process terminated with exit code 1
+2018-05-24 13:12:21.090000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:21.149000 Traceback (most recent call last):
+2018-05-24 13:12:21.160000 Process terminated with exit code 1
+2018-05-24 13:12:21.172000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:21.231000 Traceback (most recent call last):
+2018-05-24 13:12:21.241000 Process terminated with exit code 1
+2018-05-24 13:12:21.250000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:21.308000 Traceback (most recent call last):
+2018-05-24 13:12:21.319000 Process terminated with exit code 1
+2018-05-24 13:12:21.330000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:21.388000 Traceback (most recent call last):
+2018-05-24 13:12:21.398000 Process terminated with exit code 1
+2018-05-24 13:12:21.408000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:21.468000 Traceback (most recent call last):
+2018-05-24 13:12:21.479000 Process terminated with exit code 1
+2018-05-24 13:12:21.489000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:21.546000 Traceback (most recent call last):
+2018-05-24 13:12:21.557000 Process terminated with exit code 1
+2018-05-24 13:12:21.565000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:21.625000 Traceback (most recent call last):
+2018-05-24 13:12:21.635000 Process terminated with exit code 1
+2018-05-24 13:12:21.644000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:21.703000 Traceback (most recent call last):
+2018-05-24 13:12:21.714000 Process terminated with exit code 1
+2018-05-24 13:12:21.723000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:21.779000 Traceback (most recent call last):
+2018-05-24 13:12:21.790000 Process terminated with exit code 1
+2018-05-24 13:12:21.801000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:21.866000 Traceback (most recent call last):
+2018-05-24 13:12:21.875000 Process terminated with exit code 1
+2018-05-24 13:12:21.884000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:21.942000 Traceback (most recent call last):
+2018-05-24 13:12:21.953000 Process terminated with exit code 1
+2018-05-24 13:12:21.961000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:22.017000 Traceback (most recent call last):
+2018-05-24 13:12:22.027000 Process terminated with exit code 1
+2018-05-24 13:12:22.036000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:22.274000 Process terminated with exit code 1
+2018-05-24 13:12:22.284000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:22.338000 Traceback (most recent call last):
+2018-05-24 13:12:22.348000 Process terminated with exit code 1
+2018-05-24 13:12:22.356000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:22.411000 Traceback (most recent call last):
+2018-05-24 13:12:22.420000 Process terminated with exit code 1
+2018-05-24 13:12:22.429000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:22.484000 Traceback (most recent call last):
+2018-05-24 13:12:22.494000 Process terminated with exit code 1
+2018-05-24 13:12:22.503000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:22.561000 Traceback (most recent call last):
+2018-05-24 13:12:22.572000 Process terminated with exit code 1
+2018-05-24 13:12:22.581000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:22.638000 Traceback (most recent call last):
+2018-05-24 13:12:22.649000 Process terminated with exit code 1
+2018-05-24 13:12:22.659000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:22.716000 Traceback (most recent call last):
+2018-05-24 13:12:22.727000 Process terminated with exit code 1
+2018-05-24 13:12:22.737000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:22.792000 Traceback (most recent call last):
+2018-05-24 13:12:22.803000 Process terminated with exit code 1
+2018-05-24 13:12:22.813000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:22.877000 Traceback (most recent call last):
+2018-05-24 13:12:22.885000 Process terminated with exit code 1
+2018-05-24 13:12:22.893000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:22.953000 Traceback (most recent call last):
+2018-05-24 13:12:22.963000 Process terminated with exit code 1
+2018-05-24 13:12:22.971000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:23.027000 Traceback (most recent call last):
+2018-05-24 13:12:23.037000 Process terminated with exit code 1
+2018-05-24 13:12:23.046000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:23.107000 Traceback (most recent call last):
+2018-05-24 13:12:23.123000 File "C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py", line 14, in <module>
+2018-05-24 13:12:23.131000 Process terminated with exit code 1
+2018-05-24 13:12:23.140000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:23.198000 Traceback (most recent call last):
+2018-05-24 13:12:23.207000 Process terminated with exit code 1
+2018-05-24 13:12:23.215000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:23.274000 Traceback (most recent call last):
+2018-05-24 13:12:23.283000 Process terminated with exit code 1
+2018-05-24 13:12:23.290000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:23.346000 Traceback (most recent call last):
+2018-05-24 13:12:23.356000 Process terminated with exit code 1
+2018-05-24 13:12:23.365000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:23.423000 Traceback (most recent call last):
+2018-05-24 13:12:23.433000 Process terminated with exit code 1
+2018-05-24 13:12:23.440000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:23.494000 Traceback (most recent call last):
+2018-05-24 13:12:23.505000 Process terminated with exit code 1
+2018-05-24 13:12:23.513000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:23.571000 Traceback (most recent call last):
+2018-05-24 13:12:23.581000 Process terminated with exit code 1
+2018-05-24 13:12:23.588000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:23.644000 Traceback (most recent call last):
+2018-05-24 13:12:23.652000 Process terminated with exit code 1
+2018-05-24 13:12:23.659000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:23.715000 Traceback (most recent call last):
+2018-05-24 13:12:23.724000 Process terminated with exit code 1
+2018-05-24 13:12:23.732000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:23.787000 Traceback (most recent call last):
+2018-05-24 13:12:23.795000 Process terminated with exit code 1
+2018-05-24 13:12:23.803000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:23.862000 Traceback (most recent call last):
+2018-05-24 13:12:23.871000 Process terminated with exit code 1
+2018-05-24 13:12:23.879000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:23.932000 Traceback (most recent call last):
+2018-05-24 13:12:23.942000 Process terminated with exit code 1
+2018-05-24 13:12:23.951000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:24.006000 Traceback (most recent call last):
+2018-05-24 13:12:24.015000 Process terminated with exit code 1
+2018-05-24 13:12:24.021000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:24.077000 Traceback (most recent call last):
+2018-05-24 13:12:24.085000 Process terminated with exit code 1
+2018-05-24 13:12:24.093000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:24.149000 Traceback (most recent call last):
+2018-05-24 13:12:24.158000 Process terminated with exit code 1
+2018-05-24 13:12:24.166000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:24.223000 Traceback (most recent call last):
+2018-05-24 13:12:24.232000 Process terminated with exit code 1
+2018-05-24 13:12:24.240000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:24.297000 Traceback (most recent call last):
+2018-05-24 13:12:24.305000 Process terminated with exit code 1
+2018-05-24 13:12:24.313000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:24.366000 Traceback (most recent call last):
+2018-05-24 13:12:24.403000 Process terminated with exit code 1
+2018-05-24 13:12:24.442000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:24.509000 Traceback (most recent call last):
+2018-05-24 13:12:24.550000 Process terminated with exit code 1
+2018-05-24 13:12:24.593000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:24.650000 Traceback (most recent call last):
+2018-05-24 13:12:24.690000 Process terminated with exit code 1
+2018-05-24 13:12:24.731000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:24.789000 Traceback (most recent call last):
+2018-05-24 13:12:24.832000 Process terminated with exit code 1
+2018-05-24 13:12:24.878000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:24.930000 Traceback (most recent call last):
+2018-05-24 13:12:24.941000 Process terminated with exit code 1
+2018-05-24 13:12:24.950000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:25.001000 Traceback (most recent call last):
+2018-05-24 13:12:25.012000 Process terminated with exit code 1
+2018-05-24 13:12:25.021000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:25.075000 Traceback (most recent call last):
+2018-05-24 13:12:25.088000 Process terminated with exit code 1
+2018-05-24 13:12:25.098000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:25.155000 Traceback (most recent call last):
+2018-05-24 13:12:25.164000 Process terminated with exit code 1
+2018-05-24 13:12:25.172000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:25.225000 Traceback (most recent call last):
+2018-05-24 13:12:25.236000 Process terminated with exit code 1
+2018-05-24 13:12:25.245000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:25.296000 Traceback (most recent call last):
+2018-05-24 13:12:25.306000 Process terminated with exit code 1
+2018-05-24 13:12:25.316000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:25.368000 Traceback (most recent call last):
+2018-05-24 13:12:25.377000 Process terminated with exit code 1
+2018-05-24 13:12:25.386000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:25.437000 Traceback (most recent call last):
+2018-05-24 13:12:25.447000 Process terminated with exit code 1
+2018-05-24 13:12:25.457000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:25.508000 Traceback (most recent call last):
+2018-05-24 13:12:25.518000 Process terminated with exit code 1
+2018-05-24 13:12:25.528000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:25.581000 Traceback (most recent call last):
+2018-05-24 13:12:25.594000 Process terminated with exit code 1
+2018-05-24 13:12:25.604000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:25.659000 Traceback (most recent call last):
+2018-05-24 13:12:25.671000 Process terminated with exit code 1
+2018-05-24 13:12:25.680000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:25.729000 Traceback (most recent call last):
+2018-05-24 13:12:25.739000 Process terminated with exit code 1
+2018-05-24 13:12:25.750000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:25.800000 Traceback (most recent call last):
+2018-05-24 13:12:25.811000 Process terminated with exit code 1
+2018-05-24 13:12:25.821000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:25.879000 Traceback (most recent call last):
+2018-05-24 13:12:25.889000 Process terminated with exit code 1
+2018-05-24 13:12:25.899000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:25.960000 Traceback (most recent call last):
+2018-05-24 13:12:25.973000 Process terminated with exit code 1
+2018-05-24 13:12:25.983000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:26.035000 Traceback (most recent call last):
+2018-05-24 13:12:26.046000 Process terminated with exit code 1
+2018-05-24 13:12:26.055000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:26.108000 Traceback (most recent call last):
+2018-05-24 13:12:26.119000 Process terminated with exit code 1
+2018-05-24 13:12:26.129000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:26.181000 Traceback (most recent call last):
+2018-05-24 13:12:26.192000 Process terminated with exit code 1
+2018-05-24 13:12:26.201000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:26.251000 Traceback (most recent call last):
+2018-05-24 13:12:26.262000 Process terminated with exit code 1
+2018-05-24 13:12:26.271000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:26.320000 Traceback (most recent call last):
+2018-05-24 13:12:26.331000 Process terminated with exit code 1
+2018-05-24 13:12:26.340000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:26.393000 Traceback (most recent call last):
+2018-05-24 13:12:26.402000 Process terminated with exit code 1
+2018-05-24 13:12:26.414000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:26.467000 Traceback (most recent call last):
+2018-05-24 13:12:26.476000 Process terminated with exit code 1
+2018-05-24 13:12:26.487000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:26.539000 Traceback (most recent call last):
+2018-05-24 13:12:26.549000 Process terminated with exit code 1
+2018-05-24 13:12:26.558000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:26.611000 Traceback (most recent call last):
+2018-05-24 13:12:26.621000 Process terminated with exit code 1
+2018-05-24 13:12:26.630000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:26.683000 Traceback (most recent call last):
+2018-05-24 13:12:26.694000 Process terminated with exit code 1
+2018-05-24 13:12:26.704000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:26.755000 Traceback (most recent call last):
+2018-05-24 13:12:26.766000 Process terminated with exit code 1
+2018-05-24 13:12:26.775000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:26.825000 Traceback (most recent call last):
+2018-05-24 13:12:26.838000 Process terminated with exit code 1
+2018-05-24 13:12:26.852000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:26.901000 Traceback (most recent call last):
+2018-05-24 13:12:26.911000 Process terminated with exit code 1
+2018-05-24 13:12:26.921000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:26.970000 Traceback (most recent call last):
+2018-05-24 13:12:26.981000 Process terminated with exit code 1
+2018-05-24 13:12:26.991000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:27.040000 Traceback (most recent call last):
+2018-05-24 13:12:27.051000 Process terminated with exit code 1
+2018-05-24 13:12:27.060000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:27.112000 Traceback (most recent call last):
+2018-05-24 13:12:27.124000 Process terminated with exit code 1
+2018-05-24 13:12:27.134000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:27.185000 Traceback (most recent call last):
+2018-05-24 13:12:27.196000 Process terminated with exit code 1
+2018-05-24 13:12:27.205000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:27.257000 Traceback (most recent call last):
+2018-05-24 13:12:27.268000 Process terminated with exit code 1
+2018-05-24 13:12:27.278000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:27.327000 Traceback (most recent call last):
+2018-05-24 13:12:27.338000 Process terminated with exit code 1
+2018-05-24 13:12:27.347000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:27.398000 Traceback (most recent call last):
+2018-05-24 13:12:27.407000 Process terminated with exit code 1
+2018-05-24 13:12:27.416000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:27.466000 Traceback (most recent call last):
+2018-05-24 13:12:27.476000 Process terminated with exit code 1
+2018-05-24 13:12:27.486000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:27.535000 Traceback (most recent call last):
+2018-05-24 13:12:27.547000 Process terminated with exit code 1
+2018-05-24 13:12:27.558000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:27.610000 Traceback (most recent call last):
+2018-05-24 13:12:27.620000 Process terminated with exit code 1
+2018-05-24 13:12:27.631000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:27.688000 Traceback (most recent call last):
+2018-05-24 13:12:27.698000 Process terminated with exit code 1
+2018-05-24 13:12:27.707000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:27.757000 Traceback (most recent call last):
+2018-05-24 13:12:27.767000 Process terminated with exit code 1
+2018-05-24 13:12:27.777000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:27.840000 Traceback (most recent call last):
+2018-05-24 13:12:27.851000 Process terminated with exit code 1
+2018-05-24 13:12:27.861000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:27.915000 Traceback (most recent call last):
+2018-05-24 13:12:27.926000 Process terminated with exit code 1
+2018-05-24 13:12:27.935000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:27.988000 Traceback (most recent call last):
+2018-05-24 13:12:28 Process terminated with exit code 1
+2018-05-24 13:12:28.009000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:28.062000 Traceback (most recent call last):
+2018-05-24 13:12:28.074000 Process terminated with exit code 1
+2018-05-24 13:12:28.086000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:28.146000 Traceback (most recent call last):
+2018-05-24 13:12:28.158000 Process terminated with exit code 1
+2018-05-24 13:12:28.171000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:28.229000 Traceback (most recent call last):
+2018-05-24 13:12:28.241000 Process terminated with exit code 1
+2018-05-24 13:12:28.254000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:28.307000 Traceback (most recent call last):
+2018-05-24 13:12:28.320000 Process terminated with exit code 1
+2018-05-24 13:12:28.332000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:28.388000 Traceback (most recent call last):
+2018-05-24 13:12:28.399000 Process terminated with exit code 1
+2018-05-24 13:12:28.409000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:28.460000 Traceback (most recent call last):
+2018-05-24 13:12:28.471000 Process terminated with exit code 1
+2018-05-24 13:12:28.481000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:28.536000 Traceback (most recent call last):
+2018-05-24 13:12:28.547000 Process terminated with exit code 1
+2018-05-24 13:12:28.557000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:28.610000 Traceback (most recent call last):
+2018-05-24 13:12:28.622000 Process terminated with exit code 1
+2018-05-24 13:12:28.632000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:28.685000 Traceback (most recent call last):
+2018-05-24 13:12:28.696000 Process terminated with exit code 1
+2018-05-24 13:12:28.705000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:28.757000 Traceback (most recent call last):
+2018-05-24 13:12:28.768000 Process terminated with exit code 1
+2018-05-24 13:12:28.778000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:28.835000 Traceback (most recent call last):
+2018-05-24 13:12:28.854000 Process terminated with exit code 1
+2018-05-24 13:12:28.867000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:28.929000 Traceback (most recent call last):
+2018-05-24 13:12:28.940000 Process terminated with exit code 1
+2018-05-24 13:12:28.950000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:29.005000 Traceback (most recent call last):
+2018-05-24 13:12:29.015000 Process terminated with exit code 1
+2018-05-24 13:12:29.025000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:29.081000 Traceback (most recent call last):
+2018-05-24 13:12:29.093000 Process terminated with exit code 1
+2018-05-24 13:12:29.105000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:29.161000 Traceback (most recent call last):
+2018-05-24 13:12:29.172000 Process terminated with exit code 1
+2018-05-24 13:12:29.183000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:29.234000 Traceback (most recent call last):
+2018-05-24 13:12:29.245000 Process terminated with exit code 1
+2018-05-24 13:12:29.255000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:29.307000 Traceback (most recent call last):
+2018-05-24 13:12:29.319000 Process terminated with exit code 1
+2018-05-24 13:12:29.332000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:29.381000 Traceback (most recent call last):
+2018-05-24 13:12:29.393000 Process terminated with exit code 1
+2018-05-24 13:12:29.403000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:29.456000 Traceback (most recent call last):
+2018-05-24 13:12:29.468000 Process terminated with exit code 1
+2018-05-24 13:12:29.478000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:29.531000 Traceback (most recent call last):
+2018-05-24 13:12:29.543000 Process terminated with exit code 1
+2018-05-24 13:12:29.553000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:29.607000 Traceback (most recent call last):
+2018-05-24 13:12:29.620000 Process terminated with exit code 1
+2018-05-24 13:12:29.632000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:29.686000 Traceback (most recent call last):
+2018-05-24 13:12:29.697000 Process terminated with exit code 1
+2018-05-24 13:12:29.709000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:29.759000 Traceback (most recent call last):
+2018-05-24 13:12:29.771000 Process terminated with exit code 1
+2018-05-24 13:12:29.782000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:29.838000 Traceback (most recent call last):
+2018-05-24 13:12:29.857000 Process terminated with exit code 1
+2018-05-24 13:12:29.871000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:29.928000 Traceback (most recent call last):
+2018-05-24 13:12:29.942000 Process terminated with exit code 1
+2018-05-24 13:12:29.953000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:30.007000 Traceback (most recent call last):
+2018-05-24 13:12:30.019000 Process terminated with exit code 1
+2018-05-24 13:12:30.030000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:30.083000 Traceback (most recent call last):
+2018-05-24 13:12:30.094000 Process terminated with exit code 1
+2018-05-24 13:12:30.104000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:30.159000 Traceback (most recent call last):
+2018-05-24 13:12:30.171000 Process terminated with exit code 1
+2018-05-24 13:12:30.184000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:30.235000 Traceback (most recent call last):
+2018-05-24 13:12:30.247000 Process terminated with exit code 1
+2018-05-24 13:12:30.260000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:30.315000 Traceback (most recent call last):
+2018-05-24 13:12:30.326000 Process terminated with exit code 1
+2018-05-24 13:12:30.336000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:30.385000 Traceback (most recent call last):
+2018-05-24 13:12:30.397000 Process terminated with exit code 1
+2018-05-24 13:12:30.408000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:30.463000 Traceback (most recent call last):
+2018-05-24 13:12:30.473000 Process terminated with exit code 1
+2018-05-24 13:12:30.483000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:30.533000 Traceback (most recent call last):
+2018-05-24 13:12:30.545000 Process terminated with exit code 1
+2018-05-24 13:12:30.555000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:30.605000 Traceback (most recent call last):
+2018-05-24 13:12:30.618000 Process terminated with exit code 1
+2018-05-24 13:12:30.628000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:30.678000 Traceback (most recent call last):
+2018-05-24 13:12:30.690000 Process terminated with exit code 1
+2018-05-24 13:12:30.700000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:12:30.710000 Launcher terminating...
+2018-05-24 13:21:00.796000 Launched python -u C:\Users\Egor\Desktop\kopter\repository\python_copter\copter_server\main.py
+2018-05-24 13:21:00.871000 Init error
+2018-05-24 13:21:00.883000 Main run...
+2018-05-24 13:21:00.893000 
+2018-05-24 13:21:00.956000 Starting threads...
+2018-05-24 13:21:00.971000 
+2018-05-24 13:21:00.988000 
+2018-05-24 13:21:13.827000 Intros scan start cmd
+2018-05-24 13:21:18.856000 Intros scan stop cmd
+2018-05-24 13:21:18.866000 Error: scan is not performed
+2018-05-24 13:21:21.471000 Intros scan start cmd
+2018-05-24 13:21:23.288000 Intros scan stop cmd
+2018-05-24 13:21:23.317000 Error: scan is not performed
+2018-05-24 13:21:26.107000 Camera set pos cmd
+2018-05-24 13:21:26.208000 Camera set pos cmd
+2018-05-24 13:21:26.309000 Camera set pos cmd
+2018-05-24 13:21:26.411000 Camera set pos cmd
+2018-05-24 13:21:26.813000 Camera set pos cmd
+2018-05-24 13:21:26.913000 Camera set pos cmd
+2018-05-24 13:21:27.014000 Camera set pos cmd
+2018-05-24 13:21:27.216000 Camera set pos cmd
+2018-05-24 13:21:28.022000 Camera set pos cmd
+2018-05-24 13:21:28.124000 Camera set pos cmd
+2018-05-24 13:21:28.225000 Camera set pos cmd
+2018-05-24 13:21:28.327000 Camera set pos cmd
+2018-05-24 13:21:28.729000 Camera set pos cmd
+2018-05-24 13:21:28.830000 Camera set pos cmd
+2018-05-24 13:21:28.931000 Camera set pos cmd
+2018-05-24 13:21:29.133000 Camera set pos cmd
+2018-05-24 13:21:29.943000 Stop error
+2018-05-24 13:21:29.973000 received: $PUI12,0,3,
+2018-05-24 13:21:29.988000 
+2018-05-24 13:21:29.997000 Wheel to: 3.0
+2018-05-24 13:21:31.762000 Stop error
+2018-05-24 13:21:31.793000 received: $PUI12,0,-3,
+2018-05-24 13:21:31.813000 
+2018-05-24 13:21:31.822000 Wheel to: -3.0
+2018-05-24 13:21:33.977000 Camera set pos cmd
+2018-05-24 13:21:34.079000 Camera set pos cmd
+2018-05-24 13:21:34.181000 Camera set pos cmd
+2018-05-24 13:21:34.583000 Camera set pos cmd
+2018-05-24 13:21:34.685000 Camera set pos cmd
+2018-05-24 13:21:34.786000 Camera set pos cmd
+2018-05-24 13:21:34.888000 Camera set pos cmd
+2018-05-24 13:21:35.698000 Camera set zoom cmd
+2018-05-24 13:21:35.710000 set zoom stub. Fix it!
+2018-05-24 13:21:35.798000 Camera set zoom cmd
+2018-05-24 13:21:35.812000 set zoom stub. Fix it!
+2018-05-24 13:21:35.854000 Init error
+2018-05-24 13:21:35.873000 srv_interpreter_thread start
+2018-05-24 13:21:35.884000 
+2018-05-24 13:21:35.893000 Accepted new connection
+2018-05-24 13:21:35.903000 cmdAgent runCmd by interpreter: $PUI23,0,
+2018-05-24 13:21:35.913000 
+2018-05-24 13:21:35.924000 hasData: $CPA01,77,OK
+2018-05-24 13:21:35.934000 
+2018-05-24 13:21:35.944000 hasData: $CPA02,77,OK
+2018-05-24 13:21:35.955000 
+2018-05-24 13:21:35.965000 send error, drop connection
+2018-05-24 13:21:35.975000 Accepted new connection
+2018-05-24 13:21:35.985000 Old connecion dropped
+2018-05-24 13:21:35.994000 cmdAgent runCmd by interpreter: $PUI24,0,
+2018-05-24 13:21:36.004000 
+2018-05-24 13:21:36.013000 hasData: $CPA01,77,OK
+2018-05-24 13:21:36.024000 
+2018-05-24 13:21:36.034000 hasData: $CPA02,77,OK
+2018-05-24 13:21:36.044000 
+2018-05-24 13:21:36.054000 send error, drop connection
+2018-05-24 13:21:36.065000 Accepted new connection
+2018-05-24 13:21:36.076000 Old connecion dropped
+2018-05-24 13:21:36.086000 cmdAgent runCmd by interpreter: $PUI23,0,
+2018-05-24 13:21:36.096000 
+2018-05-24 13:21:36.107000 hasData: $CPA01,77,OK
+2018-05-24 13:21:36.118000 
+2018-05-24 13:21:36.128000 hasData: $CPA02,77,OK
+2018-05-24 13:21:36.138000 
+2018-05-24 13:21:36.148000 send error, drop connection
+2018-05-24 13:21:36.158000 Accepted new connection
+2018-05-24 13:21:36.169000 Old connecion dropped
+2018-05-24 13:21:36.179000 cmdAgent runCmd by interpreter: $PUI24,0,
+2018-05-24 13:21:36.190000 
+2018-05-24 13:21:36.200000 hasData: $CPA01,77,OK
+2018-05-24 13:21:36.210000 
+2018-05-24 13:21:36.221000 hasData: $CPA02,77,OK
+2018-05-24 13:21:36.231000 
+2018-05-24 13:21:36.241000 send error, drop connection
+2018-05-24 13:21:36.251000 Accepted new connection
+2018-05-24 13:21:36.260000 Old connecion dropped
+2018-05-24 13:21:36.271000 cmdAgent runCmd by interpreter: $PUI03,0,1,0,0,0,
+2018-05-24 13:21:36.281000 
+2018-05-24 13:21:36.292000 Accepted new connection
+2018-05-24 13:21:36.302000 Old connecion dropped
+2018-05-24 13:21:36.312000 cmdAgent runCmd by interpreter: $PUI03,0,1,0,0,0,
+2018-05-24 13:21:36.323000 
+2018-05-24 13:21:36.333000 Accepted new connection
+2018-05-24 13:21:36.343000 Old connecion dropped
+2018-05-24 13:21:36.352000 cmdAgent runCmd by interpreter: $PUI03,0,1,1,0,0,
+2018-05-24 13:21:36.362000 
+2018-05-24 13:21:36.372000 Accepted new connection
+2018-05-24 13:21:36.383000 Old connecion dropped
+2018-05-24 13:21:36.392000 cmdAgent runCmd by interpreter: $PUI03,0,1,4,0,0,
+2018-05-24 13:21:36.418000 
+2018-05-24 13:21:36.431000 hasData: $CPA01,77,OK
+2018-05-24 13:21:36.442000 
+2018-05-24 13:21:36.453000 hasData: $CPA02,77,OK
+2018-05-24 13:21:36.464000 
+2018-05-24 13:21:36.476000 send error, drop connection
+2018-05-24 13:21:36.486000 Accepted new connection
+2018-05-24 13:21:36.496000 Old connecion dropped
+2018-05-24 13:21:36.506000 cmdAgent runCmd by interpreter: $PUI03,0,1,7,0,0,
+2018-05-24 13:21:36.517000 
+2018-05-24 13:21:36.528000 Accepted new connection
+2018-05-24 13:21:36.539000 Old connecion dropped
+2018-05-24 13:21:36.549000 cmdAgent runCmd by interpreter: $PUI03,0,1,11,0,0,
+2018-05-24 13:21:36.559000 
+2018-05-24 13:21:36.570000 Accepted new connection
+2018-05-24 13:21:36.579000 Old connecion dropped
+2018-05-24 13:21:36.590000 cmdAgent runCmd by interpreter: $PUI03,0,1,79,0,0,
+2018-05-24 13:21:36.600000 
+2018-05-24 13:21:36.610000 hasData: $CPA01,77,OK
+2018-05-24 13:21:36.620000 
+2018-05-24 13:21:36.632000 hasData: $CPA02,77,OK
+2018-05-24 13:21:36.644000 
+2018-05-24 13:21:36.667000 send error, drop connection
+2018-05-24 13:21:36.680000 Accepted new connection
+2018-05-24 13:21:36.690000 Old connecion dropped
+2018-05-24 13:21:36.700000 cmdAgent runCmd by interpreter: $PUI03,0,1,79,0,0,
+2018-05-24 13:21:36.712000 
+2018-05-24 13:21:36.723000 hasData: $CPA01,77,OK
+2018-05-24 13:21:36.733000 
+2018-05-24 13:21:36.743000 hasData: $CPA02,77,OK
+2018-05-24 13:21:36.754000 
+2018-05-24 13:21:36.764000 send error, drop connection
+2018-05-24 13:21:36.775000 Accepted new connection
+2018-05-24 13:21:36.786000 Old connecion dropped
+2018-05-24 13:21:36.797000 cmdAgent runCmd by interpreter: $PUI03,0,1,79,0,0,
+2018-05-24 13:21:36.808000 
+2018-05-24 13:21:36.819000 Accepted new connection
+2018-05-24 13:21:36.828000 Old connecion dropped
+2018-05-24 13:21:36.846000 cmdAgent runCmd by interpreter: $PUI03,0,1,79,0,0,
+2018-05-24 13:21:36.858000 
+2018-05-24 13:21:36.868000 Accepted new connection
+2018-05-24 13:21:36.880000 Old connecion dropped
+2018-05-24 13:21:36.891000 cmdAgent runCmd by interpreter: $PUI03,0,1,79,1,0,
+2018-05-24 13:21:36.902000 
+2018-05-24 13:21:36.912000 Accepted new connection
+2018-05-24 13:21:36.922000 Old connecion dropped
+2018-05-24 13:21:36.933000 cmdAgent runCmd by interpreter: $PUI03,0,1,79,2,0,
+2018-05-24 13:21:36.944000 
+2018-05-24 13:21:36.957000 hasData: $CPA01,77,OK
+2018-05-24 13:21:36.968000 
+2018-05-24 13:21:36.978000 hasData: $CPA02,77,OK
+2018-05-24 13:21:36.989000 
+2018-05-24 13:21:37 send error, drop connection
+2018-05-24 13:21:37.010000 Accepted new connection
+2018-05-24 13:21:37.021000 Old connecion dropped
+2018-05-24 13:21:37.031000 cmdAgent runCmd by interpreter: $PUI03,0,1,79,6,0,
+2018-05-24 13:21:37.041000 
+2018-05-24 13:21:37.052000 Accepted new connection
+2018-05-24 13:21:37.062000 Old connecion dropped
+2018-05-24 13:21:37.073000 cmdAgent runCmd by interpreter: $PUI03,0,1,79,9,0,
+2018-05-24 13:21:37.084000 
+2018-05-24 13:21:37.094000 Accepted new connection
+2018-05-24 13:21:37.105000 Old connecion dropped
+2018-05-24 13:21:37.116000 cmdAgent runCmd by interpreter: $PUI03,0,1,79,76,0,
+2018-05-24 13:21:37.126000 
+2018-05-24 13:21:37.136000 hasData: $CPA01,77,OK
+2018-05-24 13:21:37.146000 
+2018-05-24 13:21:37.157000 hasData: $CPA02,77,OK
+2018-05-24 13:21:37.168000 
+2018-05-24 13:21:37.178000 send error, drop connection
+2018-05-24 13:21:37.188000 Accepted new connection
+2018-05-24 13:21:37.199000 Old connecion dropped
+2018-05-24 13:21:37.209000 cmdAgent runCmd by interpreter: $PUI03,0,1,79,76,0,
+2018-05-24 13:21:37.220000 
+2018-05-24 13:21:37.230000 hasData: $CPA01,77,OK
+2018-05-24 13:21:37.242000 
+2018-05-24 13:21:37.252000 hasData: $CPA02,77,OK
+2018-05-24 13:21:37.262000 
+2018-05-24 13:21:37.273000 send error, drop connection
+2018-05-24 13:21:37.284000 Accepted new connection
+2018-05-24 13:21:37.295000 Old connecion dropped
+2018-05-24 13:21:37.306000 cmdAgent runCmd by interpreter: $PUI12,0,3,
+2018-05-24 13:21:37.316000 
+2018-05-24 13:21:37.326000 hasData: $CPA01,77,OK
+2018-05-24 13:21:37.337000 
+2018-05-24 13:21:37.347000 hasData: $CPA02,77,OK
+2018-05-24 13:21:37.358000 
+2018-05-24 13:21:37.369000 send error, drop connection
+2018-05-24 13:21:37.379000 Accepted new connection
+2018-05-24 13:21:37.389000 Old connecion dropped
+2018-05-24 13:21:37.400000 cmdAgent runCmd by interpreter: $PUI12,0,-3,
+2018-05-24 13:21:37.410000 
+2018-05-24 13:21:37.421000 hasData: $CPA01,77,OK
+2018-05-24 13:21:37.431000 
+2018-05-24 13:21:37.442000 hasData: $CPA02,77,OK
+2018-05-24 13:21:37.452000 
+2018-05-24 13:21:37.462000 send error, drop connection
+2018-05-24 13:21:37.474000 Accepted new connection
+2018-05-24 13:21:37.484000 Old connecion dropped
+2018-05-24 13:21:37.497000 cmdAgent runCmd by interpreter: $PUI03,0,2,0,0,0,
+2018-05-24 13:21:37.508000 
+2018-05-24 13:21:37.519000 Accepted new connection
+2018-05-24 13:21:37.529000 Old connecion dropped
+2018-05-24 13:21:37.540000 cmdAgent runCmd by interpreter: $PUI03,0,2,0,0,0,
+2018-05-24 13:21:37.552000 
+2018-05-24 13:21:37.562000 Accepted new connection
+2018-05-24 13:21:37.574000 Old connecion dropped
+2018-05-24 13:21:37.584000 cmdAgent runCmd by interpreter: $PUI03,0,2,1,0,0,
+2018-05-24 13:21:37.595000 
+2018-05-24 13:21:37.606000 hasData: $CPA01,77,OK
+2018-05-24 13:21:37.617000 
+2018-05-24 13:21:37.628000 hasData: $CPA02,77,OK
+2018-05-24 13:21:37.639000 
+2018-05-24 13:21:37.654000 send error, drop connection
+2018-05-24 13:21:37.667000 Accepted new connection
+2018-05-24 13:21:37.679000 Old connecion dropped
+2018-05-24 13:21:37.690000 cmdAgent runCmd by interpreter: $PUI03,0,2,2,0,0,
+2018-05-24 13:21:37.700000 
+2018-05-24 13:21:37.713000 Accepted new connection
+2018-05-24 13:21:37.724000 Old connecion dropped
+2018-05-24 13:21:37.736000 cmdAgent runCmd by interpreter: $PUI03,0,2,4,0,0,
+2018-05-24 13:21:37.747000 
+2018-05-24 13:21:37.761000 Accepted new connection
+2018-05-24 13:21:37.772000 Old connecion dropped
+2018-05-24 13:21:37.783000 cmdAgent runCmd by interpreter: $PUI03,0,2,122,0,0,
+2018-05-24 13:21:37.794000 
+2018-05-24 13:21:37.805000 Accepted new connection
+2018-05-24 13:21:37.817000 Old connecion dropped
+2018-05-24 13:21:37.827000 cmdAgent runCmd by interpreter: $PUI03,0,2,122,0,0,
+2018-05-24 13:21:37.845000 
+2018-05-24 13:21:37.856000 hasData: $CPA01,77,OK
+2018-05-24 13:21:37.868000 
+2018-05-24 13:21:37.881000 hasData: $CPA02,77,OK
+2018-05-24 13:21:37.892000 
+2018-05-24 13:21:37.902000 send error, drop connection
+2018-05-24 13:21:37.913000 Accepted new connection
+2018-05-24 13:21:37.925000 Old connecion dropped
+2018-05-24 13:21:37.936000 cmdAgent runCmd by interpreter: $PUI06,0,1,0,
+2018-05-24 13:21:37.947000 
+2018-05-24 13:21:37.958000 Accepted new connection
+2018-05-24 13:21:37.969000 Old connecion dropped
+2018-05-24 13:21:37.980000 cmdAgent runCmd by interpreter: $PUI06,0,1,0,
+2018-05-24 13:21:37.991000 
+2018-05-24 13:21:38.003000 Accepted new connection
+2018-05-24 13:21:38.013000 Old connecion dropped
+2018-05-24 13:21:38.024000 cmdAgent runCmd by intCamera set zoom cmd
+2018-05-24 13:21:38.035000 set zoom stub. Fix it!
+2018-05-24 13:21:38.045000 Camera set zoom cmd
+2018-05-24 13:21:38.056000 set zoom stub. Fix it!
+2018-05-24 13:21:38.067000 Camera set zoom cmd
+2018-05-24 13:21:38.077000 set zoom stub. Fix it!
+2018-05-24 13:21:38.088000 Camera set zoom cmd
+2018-05-24 13:21:38.099000 set zoom stub. Fix it!
+2018-05-24 13:21:38.111000 Camera set zoom cmd
+2018-05-24 13:21:38.122000 set zoom stub. Fix it!
+2018-05-24 13:21:38.133000 Camera set zoom cmd
+2018-05-24 13:21:38.143000 set zoom stub. Fix it!
+2018-05-24 13:21:38.154000 Camera set zoom cmd
+2018-05-24 13:21:38.165000 set zoom stub. Fix it!
+2018-05-24 13:21:38.175000 Camera set zoom cmd
+2018-05-24 13:21:38.186000 set zoom stub. Fix it!
+2018-05-24 13:21:38.197000 Camera set zoom cmd
+2018-05-24 13:21:38.209000 set zoom stub. Fix it!
+2018-05-24 13:21:38.220000 Camera set zoom cmd
+2018-05-24 13:21:38.231000 set zoom stub. Fix it!
+2018-05-24 13:21:38.243000 Camera set zoom cmd
+2018-05-24 13:21:38.254000 set zoom stub. Fix it!
+2018-05-24 13:21:38.265000 Camera set zoom cmd
+2018-05-24 13:21:38.276000 set zoom stub. Fix it!
+2018-05-24 13:23:56.450000 Launcher terminating...
