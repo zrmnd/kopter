@@ -1,0 +1,7 @@
+* установить Python 2.7, при установке в списке компонентов внизу включить "Add to PATH" или после установки добавить путь к файлу питона в PATH вручную
+* скачать репозиторий и папку https://github.com/chemkot/kopter/ и папку python разместить на рабочем столе или где-то еще, в пути не должно быть пробелов и русских букв
+* запустить cmd.exe и установить доп. модули: 
+** pip install serial
+** pip install pyserial 
+* запустить программу, например так: python C:\Users\Egor\Desktop\kopter\repository\python\copter_server\main.py
+* можно запустить boardDevices_module_tester.py
