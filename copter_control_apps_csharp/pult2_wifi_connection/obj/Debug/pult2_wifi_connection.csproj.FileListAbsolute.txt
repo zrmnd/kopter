@@ -1,0 +1,8 @@
+C:\Users\Egor\Documents\SharpDevelop Projects\camera\pult2_wifi_connection\bin\Debug\pult2_wifi_connection.exe.config
+C:\Users\Egor\Documents\SharpDevelop Projects\camera\pult2_wifi_connection\bin\Debug\pult2_wifi_connection.exe
+C:\Users\Egor\Documents\SharpDevelop Projects\camera\pult2_wifi_connection\bin\Debug\pult2_wifi_connection.pdb
+C:\Users\Egor\Documents\SharpDevelop Projects\camera\pult2_wifi_connection\obj\Debug\pult2_wifi_connection.csprojResolveAssemblyReference.cache
+C:\Users\Egor\Documents\SharpDevelop Projects\camera\pult2_wifi_connection\obj\Debug\pult2_wifi_connection.csproj.GenerateResource.Cache
+C:\Users\Egor\Documents\SharpDevelop Projects\camera\pult2_wifi_connection\obj\Debug\pult2_wifi_connection.exe
+C:\Users\Egor\Documents\SharpDevelop Projects\camera\pult2_wifi_connection\obj\Debug\pult2_wifi_connection.pdb
+C:\Users\Egor\Documents\SharpDevelop Projects\camera\pult2_wifi_connection\obj\Debug\pult2_wifi_connection.MainForm.resources

@@ -1,0 +1,8 @@
+C:\Users\Egor\Documents\SharpDevelop Projects\camera\kopter\bin\Debug\kopter.exe.config
+C:\Users\Egor\Documents\SharpDevelop Projects\camera\kopter\bin\Debug\kopter.exe
+C:\Users\Egor\Documents\SharpDevelop Projects\camera\kopter\bin\Debug\kopter.pdb
+C:\Users\Egor\Documents\SharpDevelop Projects\camera\kopter\obj\Debug\kopter.csprojResolveAssemblyReference.cache
+C:\Users\Egor\Documents\SharpDevelop Projects\camera\kopter\obj\Debug\kopter.MainForm.resources
+C:\Users\Egor\Documents\SharpDevelop Projects\camera\kopter\obj\Debug\kopter.csproj.GenerateResource.Cache
+C:\Users\Egor\Documents\SharpDevelop Projects\camera\kopter\obj\Debug\kopter.exe
+C:\Users\Egor\Documents\SharpDevelop Projects\camera\kopter\obj\Debug\kopter.pdb
