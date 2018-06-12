@@ -37,8 +37,11 @@ class ModuleIP(object):
 		self._mutex.release()
 	def get(self):
 		self._mutex.acquire()
-		return (self._ip, self._ipTime)
+		tmp1 = self._ip
+		tmp2 = self._ipTime
 		self._mutex.release()
+		return (tmp1, tmp2)
+		
 pass
 
 
